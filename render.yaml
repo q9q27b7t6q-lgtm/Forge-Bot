@@ -1,5 +1,5 @@
-# ForgeBot — Render Blueprint
-# Persistent disk required for SQLite (not available on free web instances → starter).
+﻿# ForgeBot â€” Render Blueprint
+# Persistent disk required for SQLite (not available on free web instances â†’ starter).
 services:
   - type: web
     name: forgebot
@@ -9,6 +9,8 @@ services:
     startCommand: npm start
     healthCheckPath: /health
     envVars:
+      - key: NODE_VERSION
+        value: "20"
       - key: SESSION_SECRET
         generateValue: true
       - key: COOKIE_SECURE

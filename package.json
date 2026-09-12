@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "forgebot",
   "version": "1.0.0",
   "description": "ForgeBot \u2014 Location de bots Discord pour serveurs de jeux",
@@ -11,7 +11,7 @@
     "seed": "node scripts/seed-demo.js"
   },
   "engines": {
-    "node": ">=18"
+    "node": "20.x"
   },
   "private": true,
   "dependencies": {
