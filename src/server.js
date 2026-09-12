@@ -174,3 +174,21 @@ const HOST = process.env.HOST || '0.0.0.0';
 app.listen(PORT, HOST, () => {
   console.log(`[ForgeBot] Web écoute sur http://${HOST}:${PORT}`);
 });
+
+// Sur un seul service Render : lancer le bot Discord à côté du site si token présent.
+if (process.env.DISCORD_BOT_TOKEN) {
+  const { spawn } = require('child_process');
+  const botScript = path.join(__dirname, 'bot/index.js');
+  const bot = spawn(process.execPath, [botScript], {
+    stdio: 'inherit',
+    env: process.env,
+  });
+  bot.on('exit', (code, signal) => {
+    console.error(
+      `[ForgeBot] Processus bot arrêté (code=${code}, signal=${signal || 'none'})`
+    );
+  });
+  console.log('[ForgeBot] Bot Discord démarré en parallèle du site');
+} else {
+  console.log('[ForgeBot] DISCORD_BOT_TOKEN absent — site seul (bot off)');
+}
