@@ -1,0 +1,50 @@
+<%- include('../partials/head') %>
+
+<section class="page-hero reveal">
+  <div>
+    <p class="eyebrow"><%= t('dash.eyebrow') %></p>
+    <h1><%= t('dash.heading') %></h1>
+    <p class="muted"><%= t('dash.lead') %></p>
+  </div>
+  <a class="btn btn-primary btn-glow" href="/dashboard/servers/new"><%= t('dash.new_server') %></a>
+</section>
+
+<% if (flash) { %>
+  <div class="alert alert-<%= flash.type === 'success' ? 'success' : 'error' %>" role="status">
+    <%= flash.message %>
+  </div>
+<% } %>
+
+<% if (!tenants.length) { %>
+  <section class="card empty-state glass reveal">
+    <div class="empty-icon">⚔</div>
+    <h2><%= t('dash.empty_title') %></h2>
+    <p><%= t('dash.empty_body') %></p>
+    <a class="btn btn-primary btn-glow" href="/dashboard/servers/new"><%= t('dash.empty_cta') %></a>
+  </section>
+<% } else { %>
+  <div class="tenant-grid">
+    <% tenants.forEach(function(tn) { %>
+      <article class="card glass tenant-card <%= tn.active ? '' : 'is-inactive' %>">
+        <div class="tenant-top">
+          <h2><%= escapeHtml(tn.name) %></h2>
+          <span class="pill <%= tn.active ? 'pill-on' : 'pill-off' %>">
+            <%= tn.active ? t('dash.active') : t('dash.inactive') %>
+          </span>
+        </div>
+        <p class="mono muted"><%= t('dash.guild') %>&nbsp;: <%= escapeHtml(tn.discord_guild_id) %></p>
+        <div class="tenant-actions">
+          <a class="btn btn-sm btn-ghost" href="/dashboard/servers/<%= tn.id %>/edit"><%= t('dash.edit') %></a>
+          <a class="btn btn-sm btn-primary" href="/dashboard/servers/<%= tn.id %>/invite"><%= t('dash.invite') %></a>
+          <form method="post" action="/dashboard/servers/<%= tn.id %>/delete" class="inline-form"
+                onsubmit="return confirm('<%= t('dash.delete_confirm').replace(/'/g, "\\'") %>');">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+            <button type="submit" class="btn btn-sm btn-danger"><%= t('dash.delete') %></button>
+          </form>
+        </div>
+      </article>
+    <% }) %>
+  </div>
+<% } %>
+
+<%- include('../partials/foot') %>

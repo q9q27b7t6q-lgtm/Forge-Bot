@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="dzBg" x1="10" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1c2534"/>
+      <stop offset="1" stop-color="#0a0d14"/>
+    </linearGradient>
+    <radialGradient id="dzLensL" cx="24.5" cy="28" r="7" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9af3ff"/>
+      <stop offset=".45" stop-color="#38e8ff"/>
+      <stop offset="1" stop-color="#145a66"/>
+    </radialGradient>
+    <radialGradient id="dzLensR" cx="39.5" cy="28" r="7" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d4c0ff"/>
+      <stop offset=".45" stop-color="#8b5cff"/>
+      <stop offset="1" stop-color="#3a246e"/>
+    </radialGradient>
+  </defs>
+  <circle cx="32" cy="32" r="29" fill="url(#dzBg)" stroke="#38e8ff" stroke-opacity=".42" stroke-width="1.6"/>
+  <circle cx="32" cy="32" r="25.2" fill="none" stroke="#8b5cff" stroke-opacity=".22" stroke-width="1"/>
+  <path d="M18.5 27c0-5.2 5.2-9.4 13.5-9.4S45.5 21.8 45.5 27v7.2c0 6.4-5.4 12.2-13.5 14.2-8.1-2-13.5-7.8-13.5-14.2V27z" fill="#10161f" stroke="rgba(154,163,184,.35)" stroke-width="1"/>
+  <circle cx="24.5" cy="28.2" r="6.15" fill="url(#dzLensL)"/>
+  <circle cx="39.5" cy="28.2" r="6.15" fill="url(#dzLensR)"/>
+  <circle cx="24.5" cy="28.2" r="6.15" fill="none" stroke="#38e8ff" stroke-opacity=".75" stroke-width="1.1"/>
+  <circle cx="39.5" cy="28.2" r="6.15" fill="none" stroke="#8b5cff" stroke-opacity=".75" stroke-width="1.1"/>
+  <circle cx="23.2" cy="26.6" r="1.6" fill="#fff" fill-opacity=".35"/>
+  <circle cx="38.2" cy="26.6" r="1.6" fill="#fff" fill-opacity=".3"/>
+  <rect x="29.4" y="26.4" width="5.2" height="3.8" rx="1" fill="#2a3344"/>
+  <path d="M24.2 40.4c2.2 5.2 5.2 8.2 7.8 8.2s5.6-3 7.8-8.2c-3.2 1.4-12.4 1.4-15.6 0z" fill="#161d28" stroke="#38e8ff" stroke-opacity=".28"/>
+  <path d="M28.2 42.8h7.6M29.2 45.2h5.6" stroke="#9aa3b8" stroke-opacity=".5" stroke-width="1.1" stroke-linecap="round"/>
+</svg>

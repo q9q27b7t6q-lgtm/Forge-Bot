@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="fmBg" x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#141c2c"/>
+      <stop offset="1" stop-color="#090e16"/>
+    </linearGradient>
+    <linearGradient id="fmBody" x1="12" y1="28" x2="52" y2="50" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1e2a40"/>
+      <stop offset="1" stop-color="#121826"/>
+    </linearGradient>
+    <radialGradient id="fmLamp" cx="50%" cy="50%" r="50%">
+      <stop stop-color="#e8fcff"/>
+      <stop offset=".4" stop-color="#38e8ff"/>
+      <stop offset="1" stop-color="#1a6a78"/>
+    </radialGradient>
+  </defs>
+  <rect x="4.2" y="4.2" width="55.6" height="55.6" rx="14" fill="url(#fmBg)" stroke="#38e8ff" stroke-opacity=".42" stroke-width="1.6"/>
+  <path d="M16 22h4v6h-4zM24 18h3.5v10H24zM32 16h4v12h-4zM41 19h3.2v9H41zM48.5 23h3v5h-3z" fill="#8b5cff" fill-opacity=".28"/>
+  <path d="M17.5 32.2 26 21.2h12l8.5 11z" fill="#243248" stroke="#38e8ff" stroke-opacity=".45" stroke-width="1.1"/>
+  <path d="M20 30.4 26.4 23.2h11.2l6.4 7.2z" fill="#38e8ff" fill-opacity=".16"/>
+  <path d="M11.5 35.2h41l-4.4 12.2H15.9z" fill="url(#fmBody)" stroke="#8b5cff" stroke-opacity=".38" stroke-width="1.1"/>
+  <ellipse cx="18.4" cy="38.2" rx="4.2" ry="2.35" fill="url(#fmLamp)"/>
+  <ellipse cx="45.6" cy="38.2" rx="4.2" ry="2.35" fill="url(#fmLamp)"/>
+  <rect x="26.5" y="36.6" width="11" height="3.6" rx="1" fill="#07090f" stroke="#9aa3b8" stroke-opacity=".28"/>
+  <rect x="16.2" y="47.4" width="8.2" height="3.6" rx="1.1" fill="#07090f"/>
+  <rect x="39.6" y="47.4" width="8.2" height="3.6" rx="1.1" fill="#07090f"/>
+</svg>

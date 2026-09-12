@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="<%= typeof htmlLang !== 'undefined' ? htmlLang : 'fr' %>">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#07090f" />
+  <meta name="description" content="<%= t('meta.description') %>" />
+  <title><%= typeof title !== 'undefined' ? title : 'ForgeBot' %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="mesh" aria-hidden="true">
+    <span class="orb orb-a"></span>
+    <span class="orb orb-b"></span>
+    <span class="orb orb-c"></span>
+    <span class="orb orb-d"></span>
+    <span class="grid-overlay"></span>
+    <span class="noise"></span>
+  </div>
+  <header class="site-header glass-nav" id="siteHeader">
+    <a class="logo" href="/"><span class="logo-mark">⚔</span> ForgeBot</a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="<%= t('nav.menu') %>" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <nav class="nav" id="siteNav">
+      <a href="/#features"><%= t('nav.features') %></a>
+      <a href="/#how"><%= t('nav.how') %></a>
+      <a href="/#journey"><%= t('nav.journey') %></a>
+      <a href="/#pricing"><%= t('nav.pricing') %></a>
+      <a href="/#faq"><%= t('nav.faq') %></a>
+      <% if (isLoggedIn) { %>
+        <a href="/dashboard"><%= t('nav.dashboard') %></a>
+        <form action="/logout" method="post" class="inline-form">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+          <button type="submit" class="btn btn-ghost btn-sm"><%= t('nav.logout') %></button>
+        </form>
+      <% } else { %>
+        <a href="/login"><%= t('nav.login') %></a>
+        <a href="/register" class="btn btn-primary btn-sm"><%= t('nav.start') %></a>
+      <% } %>
+      <div class="lang-switch" role="group" aria-label="<%= t('lang.switch_label') %>">
+        <a class="lang-btn <%= lang === 'fr' ? 'is-active' : '' %>" href="/lang/fr" hreflang="fr"><%= t('lang.fr') %></a>
+        <a class="lang-btn <%= lang === 'en' ? 'is-active' : '' %>" href="/lang/en" hreflang="en"><%= t('lang.en') %></a>
+      </div>
+    </nav>
+  </header>
+  <main class="container">

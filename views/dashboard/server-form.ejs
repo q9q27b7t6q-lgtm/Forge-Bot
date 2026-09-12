@@ -1,0 +1,66 @@
+<%- include('../partials/head') %>
+
+<section class="page-hero reveal">
+  <div>
+    <p class="eyebrow"><a href="/dashboard">← <%= t('dash.heading') %></a></p>
+    <h1><%= tenant ? t('dash.form_edit_h1') : t('dash.form_new_h1') %></h1>
+    <p class="muted"><%= t('dash.form_lead') %></p>
+  </div>
+</section>
+
+<section class="card glass form-card reveal">
+  <% if (error) { %>
+    <div class="alert alert-error" role="alert"><%= error %></div>
+  <% } %>
+  <form method="post"
+        action="<%= tenant ? '/dashboard/servers/' + tenant.id + '/edit' : '/dashboard/servers/new' %>"
+        class="form">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+
+    <div class="form-row">
+      <label>
+        <%= t('dash.name') %>
+        <input type="text" name="name" required minlength="2" maxlength="100"
+               value="<%= escapeHtml(form.name) %>" placeholder="<%= t('dash.name_ph') %>" />
+      </label>
+      <label>
+        <%= t('dash.guild_id') %>
+        <input type="text" name="discord_guild_id" required pattern="\d{17,20}"
+               inputmode="numeric" maxlength="20"
+               value="<%= escapeHtml(form.discord_guild_id) %>"
+               placeholder="<%= t('dash.guild_id_ph') %>" />
+      </label>
+    </div>
+
+    <label>
+      <%= t('dash.knowledge') %>
+      <textarea name="knowledge_md" rows="12" maxlength="50000"
+                placeholder="# FAQ"><%= form.knowledge_md %></textarea>
+    </label>
+
+    <label>
+      <%= t('dash.shop') %>
+      <textarea name="shop_md" rows="10" maxlength="50000"
+                placeholder="# Boutique"><%= form.shop_md %></textarea>
+    </label>
+
+    <label>
+      <%= t('dash.staff_roles') %> <span class="hint"><%= t('dash.staff_hint') %></span>
+      <input type="text" name="staff_role_ids" maxlength="500"
+             value="<%= escapeHtml(form.staff_role_ids) %>"
+             placeholder="123456789012345678, …" />
+    </label>
+
+    <label class="checkbox">
+      <input type="checkbox" name="active" value="1" <%= form.active ? 'checked' : '' %> />
+      <%= t('dash.active_label') %>
+    </label>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary btn-glow"><%= tenant ? t('dash.save') : t('dash.create') %></button>
+      <a class="btn btn-ghost" href="/dashboard"><%= t('dash.cancel') %></a>
+    </div>
+  </form>
+</section>
+
+<%- include('../partials/foot') %>

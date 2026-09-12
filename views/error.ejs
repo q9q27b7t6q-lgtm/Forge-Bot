@@ -1,0 +1,7 @@
+<%- include('partials/head') %>
+<section class="card glass narrow">
+  <h1><%= t('errors.heading') %> <%= typeof status !== 'undefined' ? status : 500 %></h1>
+  <p><%= typeof message !== 'undefined' ? message : t('errors.generic_body') %></p>
+  <a class="btn btn-ghost" href="/"><%= t('errors.back_home') %></a>
+</section>
+<%- include('partials/foot') %>

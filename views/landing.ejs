@@ -1,0 +1,275 @@
+<%- include('partials/head') %>
+
+<section class="hero">
+  <p class="badge float-in"><span class="pulse-dot"></span> <%= t('landing.badge') %></p>
+  <p class="hero-kicker float-in delay-1"><%= t('landing.kicker') %></p>
+  <h1 class="float-in delay-1">
+    <%= t('landing.title_line1') %><br />
+    <span class="gradient-text"><%= t('landing.title_line2') %></span>
+  </h1>
+  <p class="lead float-in delay-2"><%= t('landing.lead') %></p>
+  <div class="hero-actions float-in delay-3">
+    <% if (isLoggedIn) { %>
+      <a class="btn btn-primary btn-lg btn-glow" href="/dashboard"><%= t('landing.cta_dashboard') %></a>
+    <% } else { %>
+      <a class="btn btn-primary btn-lg btn-glow" href="/register"><%= t('landing.cta_register') %></a>
+      <a class="btn btn-ghost btn-lg" href="/login"><%= t('landing.cta_login') %></a>
+    <% } %>
+  </div>
+  <div class="hero-stats float-in delay-4">
+    <div><strong><%= t('landing.stat1_title') %></strong><span><%= t('landing.stat1_sub') %></span></div>
+    <div><strong><%= t('landing.stat2_title') %></strong><span><%= t('landing.stat2_sub') %></span></div>
+    <div><strong><%= t('landing.stat3_title') %></strong><span><%= t('landing.stat3_sub') %></span></div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>DayZ</span><span>Rust</span><span>ARK</span><span>FiveM</span><span>Minecraft</span>
+    <span>DayZ</span><span>Rust</span><span>ARK</span><span>FiveM</span><span>Minecraft</span>
+  </div>
+</div>
+
+<ul class="game-chips float-in delay-4" aria-label="DayZ, Rust, ARK, FiveM, Minecraft">
+  <li class="game-chip glass">
+    <img class="game-chip-icon" src="/img/games/dayz.svg" alt="" width="44" height="44" />
+    <span>DayZ</span>
+  </li>
+  <li class="game-chip glass">
+    <img class="game-chip-icon" src="/img/games/rust.svg" alt="" width="44" height="44" />
+    <span>Rust</span>
+  </li>
+  <li class="game-chip glass">
+    <img class="game-chip-icon" src="/img/games/ark.svg" alt="" width="44" height="44" />
+    <span>ARK</span>
+  </li>
+  <li class="game-chip glass">
+    <img class="game-chip-icon" src="/img/games/fivem.svg" alt="" width="44" height="44" />
+    <span>FiveM</span>
+  </li>
+  <li class="game-chip glass">
+    <img class="game-chip-icon" src="/img/games/minecraft.svg" alt="" width="44" height="44" />
+    <span>Minecraft</span>
+  </li>
+</ul>
+
+<section class="showcase glass card reveal" aria-hidden="true">
+  <div class="showcase-bar">
+    <span></span><span></span><span></span>
+    <em>#général · ForgeBot</em>
+    <i class="showcase-live"><span class="pulse-dot"></span> <%= t('landing.showcase_live') %></i>
+  </div>
+  <div class="chat-feed">
+    <div class="chat-msg">
+      <div class="chat-avatar bot-av">⚔</div>
+      <div>
+        <div class="chat-meta"><strong>ForgeBot</strong><span class="bot-tag">BOT</span><time>16:02</time></div>
+        <div class="chat-bubble bot">VIP Or — 20€ / mois · kit + véhicule + skin exclusif. Ouvrez un ticket #support pour acheter.</div>
+      </div>
+    </div>
+    <div class="chat-msg">
+      <div class="chat-avatar user-av">J</div>
+      <div>
+        <div class="chat-meta"><strong>Joueur</strong><time>16:03</time></div>
+        <div class="chat-bubble user">@ForgeBot comment rejoindre le serveur ?</div>
+      </div>
+    </div>
+    <div class="chat-msg">
+      <div class="chat-avatar bot-av">⚔</div>
+      <div>
+        <div class="chat-meta"><strong>ForgeBot</strong><span class="bot-tag">BOT</span><time>16:03</time></div>
+        <div class="chat-bubble bot">Connectez-vous via le launcher / IP indiquée dans #infos. Les wipes ont lieu le 1er vendredi du mois à 18h (Paris).</div>
+      </div>
+    </div>
+    <div class="chat-typing"><i><b></b><b></b><b></b></i> ForgeBot…</div>
+  </div>
+</section>
+
+<section id="features" class="section">
+  <div class="section-head reveal">
+    <p class="eyebrow"><%= t('landing.features_eyebrow') %></p>
+    <h2><%= t('landing.features_title') %></h2>
+    <p class="muted"><%= t('landing.features_lead') %></p>
+  </div>
+  <div class="features">
+    <article class="card glass feature tilt reveal reveal-d1">
+      <div class="feature-icon cyan" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M8 7h8M8 11h5"/></svg>
+      </div>
+      <h3><%= t('landing.f1_title') %></h3>
+      <p><%= t('landing.f1_body') %></p>
+    </article>
+    <article class="card glass feature tilt reveal reveal-d2">
+      <div class="feature-icon violet" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h8.4a2 2 0 0 0 2-1.5L21 8H6"/></svg>
+      </div>
+      <h3><%= t('landing.f2_title') %></h3>
+      <p><%= t('landing.f2_body') %></p>
+    </article>
+    <article class="card glass feature tilt reveal reveal-d3">
+      <div class="feature-icon mint" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3><%= t('landing.f3_title') %></h3>
+      <p><%= t('landing.f3_body') %></p>
+    </article>
+    <article class="card glass feature tilt reveal reveal-d1">
+      <div class="feature-icon amber" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h8l-1 8 11-13h-8l0-7z"/></svg>
+      </div>
+      <h3><%= t('landing.f4_title') %></h3>
+      <p><%= t('landing.f4_body') %></p>
+    </article>
+    <article class="card glass feature tilt reveal reveal-d2">
+      <div class="feature-icon rose" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+      </div>
+      <h3><%= t('landing.f5_title') %></h3>
+      <p><%= t('landing.f5_body') %></p>
+    </article>
+    <article class="card glass feature tilt reveal reveal-d3">
+      <div class="feature-icon sky" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16 3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5z"/><path d="M5 20h14"/></svg>
+      </div>
+      <h3><%= t('landing.f6_title') %></h3>
+      <p><%= t('landing.f6_body') %></p>
+    </article>
+  </div>
+</section>
+
+<section id="how" class="section">
+  <div class="section-head reveal">
+    <p class="eyebrow"><%= t('landing.how_eyebrow') %></p>
+    <h2><%= t('landing.how_title') %></h2>
+    <p class="muted"><%= t('landing.how_lead') %></p>
+  </div>
+  <ol class="steps">
+    <li class="card glass step reveal reveal-d1">
+      <span class="step-num">01</span>
+      <h3><%= t('landing.how1_title') %></h3>
+      <p><%= t('landing.how1_body') %></p>
+    </li>
+    <li class="card glass step reveal reveal-d2">
+      <span class="step-num">02</span>
+      <h3><%= t('landing.how2_title') %></h3>
+      <p><%= t('landing.how2_body') %></p>
+    </li>
+    <li class="card glass step reveal reveal-d3">
+      <span class="step-num">03</span>
+      <h3><%= t('landing.how3_title') %></h3>
+      <p><%= t('landing.how3_body') %></p>
+    </li>
+  </ol>
+</section>
+
+<section id="journey" class="section">
+  <div class="section-head reveal">
+    <p class="eyebrow"><%= t('landing.journey_eyebrow') %></p>
+    <h2><%= t('landing.journey_title') %></h2>
+    <p class="muted"><%= t('landing.journey_lead') %></p>
+  </div>
+  <ol class="steps journey-steps">
+    <li class="card glass step reveal reveal-d1">
+      <span class="step-num">A</span>
+      <h3><%= t('landing.j1_title') %></h3>
+      <p><%= t('landing.j1_body') %></p>
+    </li>
+    <li class="card glass step reveal reveal-d2">
+      <span class="step-num">B</span>
+      <h3><%= t('landing.j2_title') %></h3>
+      <p><%= t('landing.j2_body') %></p>
+    </li>
+    <li class="card glass step reveal reveal-d3">
+      <span class="step-num">C</span>
+      <h3><%= t('landing.j3_title') %></h3>
+      <p><%= t('landing.j3_body') %></p>
+    </li>
+    <li class="card glass step reveal reveal-d1">
+      <span class="step-num">D</span>
+      <h3><%= t('landing.j4_title') %></h3>
+      <p><%= t('landing.j4_body') %></p>
+    </li>
+  </ol>
+</section>
+
+<section id="pricing" class="section">
+  <div class="section-head reveal">
+    <p class="eyebrow"><%= t('landing.pricing_eyebrow') %></p>
+    <h2><%= t('landing.pricing_title') %></h2>
+    <p class="badge-soon"><%= t('landing.pricing_soon') %></p>
+  </div>
+  <div class="pricing">
+    <article class="card glass price-card reveal reveal-d1">
+      <h3><%= t('landing.p1_name') %></h3>
+      <p class="price"><span><%= t('landing.p1_price') %></span><small><%= t('landing.p1_period') %></small></p>
+      <ul>
+        <li><%= t('landing.p1_l1') %></li>
+        <li><%= t('landing.p1_l2') %></li>
+        <li><%= t('landing.p1_l3') %></li>
+      </ul>
+      <a class="btn btn-ghost btn-block" href="/register"><%= t('landing.p1_cta') %></a>
+    </article>
+    <article class="card glass price-card featured reveal reveal-d2">
+      <div class="ribbon"><%= t('landing.p2_badge') %></div>
+      <h3><%= t('landing.p2_name') %></h3>
+      <p class="price"><span><%= t('landing.p2_price') %></span><small><%= t('landing.p2_period') %></small></p>
+      <ul>
+        <li><%= t('landing.p2_l1') %></li>
+        <li><%= t('landing.p2_l2') %></li>
+        <li><%= t('landing.p2_l3') %></li>
+        <li><%= t('landing.p2_l4') %></li>
+      </ul>
+      <a class="btn btn-primary btn-block btn-glow" href="/register"><%= t('landing.p2_cta') %></a>
+    </article>
+    <article class="card glass price-card reveal reveal-d3">
+      <h3><%= t('landing.p3_name') %></h3>
+      <p class="price"><span><%= t('landing.p3_price') %></span><small><%= t('landing.p3_period') %></small></p>
+      <ul>
+        <li><%= t('landing.p3_l1') %></li>
+        <li><%= t('landing.p3_l2') %></li>
+        <li><%= t('landing.p3_l3') %></li>
+      </ul>
+      <a class="btn btn-ghost btn-block" href="/register"><%= t('landing.p3_cta') %></a>
+    </article>
+  </div>
+  <p class="muted center tiny"><%= t('landing.pricing_note') %></p>
+</section>
+
+<section id="faq" class="section">
+  <div class="section-head reveal">
+    <p class="eyebrow"><%= t('landing.faq_eyebrow') %></p>
+    <h2><%= t('landing.faq_title') %></h2>
+  </div>
+  <div class="faq-list">
+    <details class="card glass faq-item reveal" open>
+      <summary><%= t('landing.faq1_q') %></summary>
+      <p><%= t('landing.faq1_a') %></p>
+    </details>
+    <details class="card glass faq-item reveal reveal-d1">
+      <summary><%= t('landing.faq2_q') %></summary>
+      <p><%= t('landing.faq2_a') %></p>
+    </details>
+    <details class="card glass faq-item reveal reveal-d2">
+      <summary><%= t('landing.faq3_q') %></summary>
+      <p><%= t('landing.faq3_a') %></p>
+    </details>
+    <details class="card glass faq-item reveal reveal-d3">
+      <summary><%= t('landing.faq4_q') %></summary>
+      <p><%= t('landing.faq4_a') %></p>
+    </details>
+    <details class="card glass faq-item reveal">
+      <summary><%= t('landing.faq5_q') %></summary>
+      <p><%= t('landing.faq5_a') %></p>
+    </details>
+  </div>
+</section>
+
+<section class="cta-band glass reveal">
+  <div>
+    <h2><%= t('landing.cta_title') %></h2>
+    <p class="muted"><%= t('landing.cta_lead') %></p>
+  </div>
+  <a class="btn btn-primary btn-lg btn-glow" href="/register"><%= t('landing.cta_btn') %></a>
+</section>
+
+<%- include('partials/foot') %>

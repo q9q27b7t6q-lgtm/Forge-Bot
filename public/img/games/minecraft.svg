@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="mcTop" x1="32" y1="8" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6fd63a"/>
+      <stop offset="1" stop-color="#3d9a22"/>
+    </linearGradient>
+    <linearGradient id="mcLeft" x1="8" y1="20" x2="32" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8b5a2b"/>
+      <stop offset="1" stop-color="#5a3818"/>
+    </linearGradient>
+    <linearGradient id="mcRight" x1="32" y1="20" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d4a05a"/>
+      <stop offset="1" stop-color="#a06e32"/>
+    </linearGradient>
+  </defs>
+  <polygon points="32,7 57,20 32,33 7,20" fill="url(#mcTop)" stroke="#38e8ff" stroke-opacity=".28" stroke-width=".8"/>
+  <polygon points="7,20 32,33 32,57 7,44" fill="url(#mcLeft)"/>
+  <polygon points="32,33 57,20 57,44 32,57" fill="url(#mcRight)"/>
+  <path d="M32 7 57 20 32 33 7 20Z" fill="none" stroke="#3dffb5" stroke-opacity=".35" stroke-width="1"/>
+  <path d="M7 20v24l25 13 25-13V20" fill="none" stroke="#8b5cff" stroke-opacity=".2" stroke-width=".8"/>
+  <rect x="20" y="14.2" width="5.2" height="3.4" transform="skewY(-27.5)" fill="#2f7a18" fill-opacity=".55"/>
+  <rect x="34" y="16.6" width="4.6" height="3" transform="skewY(-27.5)" fill="#2f7a18" fill-opacity=".45"/>
+  <rect x="26" y="20.4" width="4.2" height="2.6" transform="skewY(-27.5)" fill="#86e04a" fill-opacity=".4"/>
+  <rect x="14" y="28" width="6" height="5" transform="skewY(27)" fill="#6a421c" fill-opacity=".35"/>
+  <rect x="20" y="38" width="5" height="6" transform="skewY(27)" fill="#3d2610" fill-opacity=".28"/>
+  <rect x="40" y="26" width="6" height="5" transform="skewY(-27)" fill="#e8bc78" fill-opacity=".28"/>
+  <rect x="36" y="40" width="5" height="6" transform="skewY(-27)" fill="#7a501e" fill-opacity=".22"/>
+</svg>

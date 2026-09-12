@@ -1,0 +1,40 @@
+<%- include('../partials/head') %>
+
+<section class="page-hero reveal">
+  <div>
+    <p class="eyebrow"><a href="/dashboard">← <%= t('dash.heading') %></a></p>
+    <h1><%= t('dash.invite_title') %></h1>
+    <p class="muted"><%= t('dash.invite_server') %>&nbsp;: <strong><%= escapeHtml(tenant.name) %></strong></p>
+  </div>
+</section>
+
+<section class="card glass narrow reveal">
+  <p class="mono muted"><%= t('dash.invite_guild') %>&nbsp;: <%= escapeHtml(tenant.discord_guild_id) %></p>
+  <p class="mono muted">
+    <%= t('dash.invite_client_label') %>&nbsp;:
+    <% if (clientId) { %>
+      <code><%= escapeHtml(clientId) %></code>
+    <% } else { %>
+      <em><%= t('dash.invite_client_empty') %></em>
+    <% } %>
+  </p>
+
+  <% if (inviteUrl) { %>
+    <p><%= t('dash.invite_ready') %></p>
+    <a class="btn btn-primary btn-block btn-glow" href="<%= inviteUrl %>" target="_blank" rel="noopener noreferrer">
+      <%= t('dash.invite_open') %>
+    </a>
+    <p class="hint break-all"><%= inviteUrl %></p>
+  <% } else { %>
+    <div class="alert alert-error">
+      <strong><%= t('dash.invite_missing_title') %></strong>
+      <p style="margin:.5rem 0 0"><%= t('dash.invite_missing_body') %></p>
+    </div>
+    <h3><%= t('dash.invite_howto_title') %></h3>
+    <pre class="code-block"><%= t('dash.invite_howto') %></pre>
+    <p><%= t('dash.invite_template') %></p>
+    <pre class="code-block">https://discord.com/api/oauth2/authorize?client_id=VOTRE_CLIENT_ID&amp;permissions=274877991936&amp;scope=bot%20applications.commands&amp;guild_id=<%= escapeHtml(tenant.discord_guild_id) %>&amp;disable_guild_select=true</pre>
+  <% } %>
+</section>
+
+<%- include('../partials/foot') %>

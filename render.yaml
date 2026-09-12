@@ -1,0 +1,23 @@
+# ForgeBot — Render Blueprint
+# Persistent disk required for SQLite (not available on free web instances → starter).
+services:
+  - type: web
+    name: forgebot
+    runtime: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: NODE_ENV
+        value: production
+      - key: DATA_DIR
+        value: /var/data
+    disk:
+      name: forgebot-data
+      mountPath: /var/data
+      sizeGB: 1

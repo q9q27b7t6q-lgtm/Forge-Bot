@@ -1,0 +1,30 @@
+{
+  "name": "forgebot",
+  "version": "1.0.0",
+  "description": "ForgeBot \u2014 Location de bots Discord pour serveurs de jeux",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "bot": "node src/bot/index.js",
+    "dev": "node --watch src/server.js",
+    "check": "node --check src/server.js && node --check src/bot/index.js && node --check src/db/index.js",
+    "seed": "node scripts/seed-demo.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "private": true,
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "better-sqlite3": "^11.7.0",
+    "connect-sqlite3": "^0.9.15",
+    "csrf-sync": "^4.0.3",
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-session": "^1.18.1",
+    "helmet": "^8.0.0"
+  }
+}
