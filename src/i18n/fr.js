@@ -39,6 +39,7 @@ module.exports = {
       'Configure un bot Discord pour ton serveur : FAQ, boutique VIP, alerte staff. Pensé pour DayZ, Rust, ARK, FiveM — prototype prêt maintenant.',
     cta_dashboard: 'Ouvrir mon espace',
     cta_register: 'Créer mon espace',
+    cta_closed: 'Bientôt disponible',
     cta_login: 'Se connecter',
     stat1_title: 'Multi-serveurs',
     stat1_sub: 'Un bot pour plusieurs Discord',
@@ -92,6 +93,7 @@ module.exports = {
       'Vous invitez ForgeBot sur votre Discord. Le bot tourne tout seul — rien à installer, personne ne vient configurer votre serveur.',
     journey_eyebrow: 'Parcours client',
     journey_title: 'De l’inscription au bot en ligne',
+    journey_title_closed: 'Bientôt : de l’inscription au bot en ligne',
     journey_lead:
       'Voici le chemin type pour un proprio de serveur DayZ, Rust ou GTA V (FiveM).',
     j1_title: 'Compte',

@@ -12,7 +12,7 @@
     <% if (isLoggedIn) { %>
       <a class="btn btn-primary btn-lg btn-glow" href="/dashboard"><%= t('landing.cta_dashboard') %></a>
     <% } else { %>
-      <a class="btn btn-primary btn-lg btn-glow" href="<%= typeof signupsOpen !== 'undefined' && signupsOpen ? '/register' : '/login' %>"><%= t('landing.cta_register') %></a>
+      <a class="btn btn-primary btn-lg btn-glow" href="/register"><%= (typeof signupsOpen !== 'undefined' && signupsOpen ? t('landing.cta_register') : t('landing.cta_closed')) %></a>
       <a class="btn btn-ghost btn-lg" href="/login"><%= t('landing.cta_login') %></a>
     <% } %>
   </div>
@@ -166,7 +166,7 @@
 <section id="journey" class="section">
   <div class="section-head reveal">
     <p class="eyebrow"><%= t('landing.journey_eyebrow') %></p>
-    <h2><%= t('landing.journey_title') %></h2>
+    <h2><%= (typeof signupsOpen !== 'undefined' && signupsOpen ? t('landing.journey_title') : t('landing.journey_title_closed')) %></h2>
     <p class="muted"><%= t('landing.journey_lead') %></p>
   </div>
   <ol class="steps journey-steps">
@@ -208,7 +208,7 @@
         <li><%= t('landing.p1_l2') %></li>
         <li><%= t('landing.p1_l3') %></li>
       </ul>
-      <a class="btn btn-ghost btn-block" href="<%= typeof signupsOpen !== 'undefined' && signupsOpen ? '/register' : '/login' %>"><%= t('landing.p1_cta') %></a>
+      <a class="btn btn-ghost btn-block" href="/register"><%= (typeof signupsOpen !== 'undefined' && signupsOpen ? t('landing.p1_cta') : t('landing.cta_closed')) %></a>
     </article>
     <article class="card glass price-card featured reveal reveal-d2">
       <div class="ribbon"><%= t('landing.p2_badge') %></div>
@@ -220,7 +220,7 @@
         <li><%= t('landing.p2_l3') %></li>
         <li><%= t('landing.p2_l4') %></li>
       </ul>
-      <a class="btn btn-primary btn-block btn-glow" href="<%= typeof signupsOpen !== 'undefined' && signupsOpen ? '/register' : '/login' %>"><%= t('landing.p2_cta') %></a>
+      <a class="btn btn-primary btn-block btn-glow" href="/register"><%= (typeof signupsOpen !== 'undefined' && signupsOpen ? t('landing.p2_cta') : t('landing.cta_closed')) %></a>
     </article>
     <article class="card glass price-card reveal reveal-d3">
       <h3><%= t('landing.p3_name') %></h3>
@@ -230,7 +230,7 @@
         <li><%= t('landing.p3_l2') %></li>
         <li><%= t('landing.p3_l3') %></li>
       </ul>
-      <a class="btn btn-ghost btn-block" href="<%= typeof signupsOpen !== 'undefined' && signupsOpen ? '/register' : '/login' %>"><%= t('landing.p3_cta') %></a>
+      <a class="btn btn-ghost btn-block" href="/register"><%= (typeof signupsOpen !== 'undefined' && signupsOpen ? t('landing.p3_cta') : t('landing.cta_closed')) %></a>
     </article>
   </div>
   <p class="muted center tiny"><%= t('landing.pricing_note') %></p>
@@ -270,7 +270,7 @@
     <h2><%= t('landing.cta_title') %></h2>
     <p class="muted"><%= t('landing.cta_lead') %></p>
   </div>
-  <a class="btn btn-primary btn-lg btn-glow" href="<%= typeof signupsOpen !== 'undefined' && signupsOpen ? '/register' : '/login' %>"><%= t('landing.cta_btn') %></a>
+  <a class="btn btn-primary btn-lg btn-glow" href="/register"><%= (typeof signupsOpen !== 'undefined' && signupsOpen ? t('landing.cta_btn') : t('landing.cta_closed')) %></a>
 </section>
 
 <%- include('partials/foot') %>
