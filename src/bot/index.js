@@ -30,23 +30,43 @@ const client = new Client({
   partials: [Partials.Channel],
 });
 
+function stripMentions(content) {
+  return content
+    .replace(/<@!?\d+>/g, ' ')
+    .replace(/<@&\d+>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function isForgeBotRole(role, clientUser) {
+  if (!role) return false;
+  if (role.tags && role.tags.botId && role.tags.botId === clientUser.id) {
+    return true;
+  }
+  const n = String(role.name || '').toLowerCase().replace(/\s+/g, '');
+  return n === 'forgebot' || n.includes('forgebot');
+}
+
 function extractQuery(message, clientUser) {
   const content = message.content.trim();
-  const mention = `<@${clientUser.id}>`;
-  const mentionNick = `<@!${clientUser.id}>`;
+  const mentionedUser = message.mentions.users.has(clientUser.id);
+  const mentionedRole = message.mentions.roles.some((r) =>
+    isForgeBotRole(r, clientUser)
+  );
 
-  if (content.startsWith(mention) || content.startsWith(mentionNick)) {
-    return content
-      .replace(mention, '')
-      .replace(mentionNick, '')
-      .trim();
+  if (mentionedUser || mentionedRole) {
+    return stripMentions(content);
   }
+
+  // Leading raw role/user mention (autocomplete sometimes only sends <@&id>)
+  if (/^<(?:@!?\d+|@&\d+)>/.test(content)) {
+    return stripMentions(content);
+  }
+
   if (content.startsWith(PREFIX)) {
-    // !faq ..., !shop ..., or !ask ...
     const rest = content.slice(PREFIX.length).trim();
     const m = rest.match(/^(faq|shop|ask|aide|help)\s+(.+)/i);
     if (m) return m[2].trim();
-    // bare !question
     if (rest.length >= 3) return rest;
   }
   return null;
@@ -66,8 +86,10 @@ client.on(Events.MessageCreate, async (message) => {
 
     const tenant = getTenantByGuildId(message.guild.id);
     if (!tenant) {
-      // Unknown guild: short message once if mentioned, else ignore
-      if (message.mentions.has(client.user)) {
+      const pinged =
+        message.mentions.users.has(client.user.id) ||
+        message.mentions.roles.some((r) => isForgeBotRole(r, client.user));
+      if (pinged) {
         await message.reply({
           content:
             'Ce serveur n’est pas encore configuré sur ForgeBot. Le propriétaire doit créer un tenant sur le tableau de bord.',
@@ -105,6 +127,7 @@ client.on(Events.MessageCreate, async (message) => {
       const roles = tenant.staff_role_ids
         .split(',')
         .filter(Boolean)
+        .filter((id) => !/^123456789012345678$/.test(id.trim()))
         .map((id) => `<@&${id}>`)
         .join(' ');
       if (roles) staffHint = roles;
