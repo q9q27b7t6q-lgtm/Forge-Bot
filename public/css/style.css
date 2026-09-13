@@ -353,11 +353,14 @@ html { scrollbar-color: var(--violet) #07090f; scrollbar-width: thin; }
   to { opacity: 1; transform: none; }
 }
 
-/* Scroll reveal — start visible; never hide forms */
+/* Scroll reveal — start visible; is-in only softens motion (never hide forms) */
 html.js .reveal {
   opacity: 1;
   transform: none;
   transition: opacity .75s ease, transform .75s ease;
+}
+html.js .reveal:not(.is-in) {
+  /* soft hint only on marketing homepage blocks that opt into below-fold anim */
 }
 .reveal.is-in {
   opacity: 1;
@@ -454,6 +457,15 @@ html.js .reveal {
 }
 
 /* Discord showcase */
+.showcase-caption {
+  margin: 0 0 .85rem;
+  padding: 0 .15rem;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
 .showcase {
   max-width: 640px; margin: 2.5rem auto 1rem; padding: 0; overflow: hidden;
 }

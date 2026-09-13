@@ -41,8 +41,10 @@ module.exports = {
     stat2_sub: 'The bot uses your rules and shop — simple and reliable',
     stat3_title: 'Protected account',
     stat3_sub: 'Your credentials stay private and secure',
-    showcase_live: 'live',
-    showcase_channel: '#general · ForgeBot',
+    showcase_label: 'Sample Discord conversation',
+    showcase_caption: 'Discord example — fictional chat (demo), not a live channel.',
+    showcase_live: 'EXAMPLE',
+    showcase_channel: '#general · demo',
     showcase_bot1:
       'Gold VIP — €20 / month · kit + vehicle + exclusive skin. Open a #support ticket to buy.',
     showcase_user: 'Player',

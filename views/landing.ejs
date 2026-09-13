@@ -53,11 +53,12 @@
   </li>
 </ul>
 
-<section class="showcase glass card reveal" aria-hidden="true">
+<section class="showcase glass card reveal" aria-label="<%= t('landing.showcase_label') %>">
+  <p class="showcase-caption"><%= t('landing.showcase_caption') %></p>
   <div class="showcase-bar">
     <span></span><span></span><span></span>
     <em><%= t('landing.showcase_channel') %></em>
-    <i class="showcase-live"><span class="pulse-dot"></span> <%= t('landing.showcase_live') %></i>
+    <i class="showcase-live"><%= t('landing.showcase_live') %></i>
   </div>
   <div class="chat-feed">
     <div class="chat-msg">

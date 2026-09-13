@@ -41,8 +41,10 @@ module.exports = {
     stat2_sub: 'Le bot utilise tes règles et ta boutique — simple et fiable',
     stat3_title: 'Compte protégé',
     stat3_sub: 'Tes identifiants restent privés et sécurisés',
-    showcase_live: 'en direct',
-    showcase_channel: '#général · ForgeBot',
+    showcase_label: 'Exemple de conversation Discord',
+    showcase_caption: 'Exemple Discord — conversation fictive (démo), pas un salon en direct.',
+    showcase_live: 'EXEMPLE',
+    showcase_channel: '#général · démo',
     showcase_bot1:
       'VIP Or — 20€ / mois · kit + véhicule + skin exclusif. Ouvrez un ticket #support pour acheter.',
     showcase_user: 'Joueur',
