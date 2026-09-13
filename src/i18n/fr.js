@@ -42,6 +42,14 @@ module.exports = {
     stat3_title: 'Compte protégé',
     stat3_sub: 'Tes identifiants restent privés et sécurisés',
     showcase_live: 'en direct',
+    showcase_channel: '#général · ForgeBot',
+    showcase_bot1:
+      'VIP Or — 20€ / mois · kit + véhicule + skin exclusif. Ouvrez un ticket #support pour acheter.',
+    showcase_user: 'Joueur',
+    showcase_user_msg: '@ForgeBot comment rejoindre le serveur ?',
+    showcase_bot2:
+      'Connectez-vous via le launcher / IP indiquée dans #infos. Les wipes ont lieu le 1er vendredi du mois à 18h (Paris).',
+    showcase_typing: 'ForgeBot…',
     features_eyebrow: 'Puissance utile',
     features_title: 'Tout ce qu’il faut pour un serveur pro',
     features_lead:

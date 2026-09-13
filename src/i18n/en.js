@@ -41,7 +41,15 @@ module.exports = {
     stat2_sub: 'The bot uses your rules and shop — simple and reliable',
     stat3_title: 'Protected account',
     stat3_sub: 'Your credentials stay private and secure',
-    showcase_live: 'live',
+    showcase_live: 'live'
+    showcase_channel: '#general · ForgeBot',
+    showcase_bot1:
+      'Gold VIP — €20 / month · kit + vehicle + exclusive skin. Open a #support ticket to buy.',
+    showcase_user: 'Player',
+    showcase_user_msg: '@ForgeBot how do I join the server?',
+    showcase_bot2:
+      'Connect via the launcher / IP in #info. Wipes are on the 1st Friday of the month at 6pm (Paris).',
+    showcase_typing: 'ForgeBot…',,
     features_eyebrow: 'Useful power',
     features_title: 'Everything a pro server needs',
     features_lead:

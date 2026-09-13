@@ -56,7 +56,7 @@
 <section class="showcase glass card reveal" aria-hidden="true">
   <div class="showcase-bar">
     <span></span><span></span><span></span>
-    <em>#général · ForgeBot</em>
+    <em><%= t('landing.showcase_channel') %></em>
     <i class="showcase-live"><span class="pulse-dot"></span> <%= t('landing.showcase_live') %></i>
   </div>
   <div class="chat-feed">
@@ -64,24 +64,24 @@
       <div class="chat-avatar bot-av">⚔</div>
       <div>
         <div class="chat-meta"><strong>ForgeBot</strong><span class="bot-tag">BOT</span><time>16:02</time></div>
-        <div class="chat-bubble bot">VIP Or — 20€ / mois · kit + véhicule + skin exclusif. Ouvrez un ticket #support pour acheter.</div>
+        <div class="chat-bubble bot"><%= t('landing.showcase_bot1') %></div>
       </div>
     </div>
     <div class="chat-msg">
       <div class="chat-avatar user-av">J</div>
       <div>
-        <div class="chat-meta"><strong>Joueur</strong><time>16:03</time></div>
-        <div class="chat-bubble user">@ForgeBot comment rejoindre le serveur ?</div>
+        <div class="chat-meta"><strong><%= t('landing.showcase_user') %></strong><time>16:03</time></div>
+        <div class="chat-bubble user"><%= t('landing.showcase_user_msg') %></div>
       </div>
     </div>
     <div class="chat-msg">
       <div class="chat-avatar bot-av">⚔</div>
       <div>
         <div class="chat-meta"><strong>ForgeBot</strong><span class="bot-tag">BOT</span><time>16:03</time></div>
-        <div class="chat-bubble bot">Connectez-vous via le launcher / IP indiquée dans #infos. Les wipes ont lieu le 1er vendredi du mois à 18h (Paris).</div>
+        <div class="chat-bubble bot"><%= t('landing.showcase_bot2') %></div>
       </div>
     </div>
-    <div class="chat-typing"><i><b></b><b></b><b></b></i> ForgeBot…</div>
+    <div class="chat-typing"><i><b></b><b></b><b></b></i> <%= t('landing.showcase_typing') %></div>
   </div>
 </section>
 
