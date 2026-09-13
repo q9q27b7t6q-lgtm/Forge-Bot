@@ -23,6 +23,10 @@
     </label>
     <button type="submit" class="btn btn-primary btn-block btn-glow"><%= t('auth.login_btn') %></button>
   </form>
+  <% if (typeof signupsOpen !== 'undefined' && signupsOpen) { %>
   <p class="muted center"><%= t('auth.no_account') %> <a href="/register"><%= t('auth.signup_link') %></a></p>
+  <% } else { %>
+  <p class="muted center"><%= t('auth.signups_closed') %></p>
+  <% } %>
 </section>
 <%- include('../partials/foot') %>

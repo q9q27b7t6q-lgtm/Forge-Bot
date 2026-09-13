@@ -14,6 +14,12 @@ const { normalizeStaffRoleIds } = require('../utils/validators');
 const { requireAuth } = require('../middleware/auth');
 
 const router = express.Router();
+
+function publicOnboardingOpen() {
+  return String(process.env.SIGNUPS_OPEN || '').toLowerCase() === 'true';
+}
+
+
 router.use(requireAuth);
 
 function parseTenantBody(body) {
@@ -55,6 +61,10 @@ router.get('/', (req, res) => {
 });
 
 router.get('/servers/new', (req, res) => {
+  if (!publicOnboardingOpen()) {
+    req.session.flash = { type: 'error', message: res.locals.t('auth.signups_closed') };
+    return req.session.save(() => res.redirect('/dashboard'));
+  }
   res.render('dashboard/server-form', {
     title: res.locals.t('dash.form_new_title'),
     tenant: null,
@@ -71,6 +81,10 @@ router.get('/servers/new', (req, res) => {
 });
 
 router.post('/servers/new', (req, res) => {
+  if (!publicOnboardingOpen()) {
+    req.session.flash = { type: 'error', message: res.locals.t('auth.signups_closed') };
+    return req.session.save(() => res.redirect('/dashboard'));
+  }
   const data = parseTenantBody(req.body);
   const err = validateTenant(data, null, res.locals.t);
   if (err) {

@@ -13,6 +13,24 @@ const { guestOnly } = require('../middleware/auth');
 const router = express.Router();
 const BCRYPT_ROUNDS = 12;
 
+/** Public signups locked until payments/trial are ready. Set SIGNUPS_OPEN=true to reopen. */
+function signupsOpen() {
+  return String(process.env.SIGNUPS_OPEN || '').toLowerCase() === 'true';
+}
+
+function renderSignupsClosed(req, res, status = 403) {
+  const t = res.locals.t;
+  return res.status(status).render('auth/register', {
+    title: t('auth.title_register'),
+    error: null,
+    email: '',
+    accept_cgv: false,
+    accept_privacy: false,
+    waive_withdrawal: false,
+    signupsClosed: true,
+  });
+}
+
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 20,
@@ -22,6 +40,7 @@ const authLimiter = rateLimit({
 });
 
 router.get('/register', guestOnly, (req, res) => {
+  if (!signupsOpen()) return renderSignupsClosed(req, res, 200);
   res.render('auth/register', {
     title: res.locals.t('auth.title_register'),
     error: null,
@@ -29,10 +48,12 @@ router.get('/register', guestOnly, (req, res) => {
     accept_cgv: false,
     accept_privacy: false,
     waive_withdrawal: false,
+    signupsClosed: false,
   });
 });
 
 router.post('/register', guestOnly, authLimiter, async (req, res) => {
+  if (!signupsOpen()) return renderSignupsClosed(req, res, 403);
   const email = (req.body.email || '').trim();
   const password = req.body.password || '';
   const passwordConfirm = req.body.password_confirm || '';
@@ -50,6 +71,7 @@ router.post('/register', guestOnly, authLimiter, async (req, res) => {
       accept_cgv: acceptCgv,
       accept_privacy: acceptPrivacy,
       waive_withdrawal: waiveWithdrawal,
+      signupsClosed: false,
     });
 
   if (!isValidEmail(email)) {

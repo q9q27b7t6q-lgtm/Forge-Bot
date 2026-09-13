@@ -3,10 +3,14 @@
   <div>
     <p class="eyebrow"><%= t('auth.register_eyebrow') %></p>
     <h1><%= t('auth.register_title') %></h1>
-    <p class="muted"><%= t('auth.register_lead') %></p>
+    <p class="muted"><%= typeof signupsClosed !== 'undefined' && signupsClosed ? t('auth.signups_closed_lead') : t('auth.register_lead') %></p>
   </div>
 </section>
 <section class="card glass narrow">
+  <% if (typeof signupsClosed !== 'undefined' && signupsClosed) { %>
+    <div class="alert alert-error" role="alert"><%= t('auth.signups_closed') %></div>
+    <p class="muted center"><%= t('auth.has_account') %> <a href="/login"><%= t('auth.login_link') %></a></p>
+  <% } else { %>
   <% if (error) { %>
     <div class="alert alert-error" role="alert"><%= error %></div>
   <% } %>
@@ -42,5 +46,6 @@
     <button type="submit" class="btn btn-primary btn-block btn-glow"><%= t('auth.register_btn') %></button>
   </form>
   <p class="muted center"><%= t('auth.has_account') %> <a href="/login"><%= t('auth.login_link') %></a></p>
+  <% } %>
 </section>
 <%- include('../partials/foot') %>

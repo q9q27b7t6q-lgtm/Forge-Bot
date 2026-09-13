@@ -170,6 +170,8 @@ module.exports = {
     waive_withdrawal_html:
       'Je demande l’activation immédiate du service numérique ForgeBot et je reconnais perdre mon droit de rétractation de 14 jours dès que l’exécution a commencé (<a href="/retractation" target="_blank" rel="noopener">détails</a>).',
     err_legal_checks: 'Cochez les cases obligatoires (CGV, confidentialité, activation immédiate).',
+    signups_closed: 'Inscriptions fermées pour le moment. Les paiements arrivent bientôt — le site reste en vitrine.',
+    signups_closed_lead: 'Bientôt disponible. Connexion réservée aux comptes déjà créés.',
     register_btn: 'Créer mon compte',
     no_account: 'Pas encore de compte ?',
     signup_link: 'S’inscrire',

@@ -40,7 +40,9 @@
         </form>
       <% } else { %>
         <a href="/login"><%= t('nav.login') %></a>
-        <a href="/register" class="btn btn-primary btn-sm"><%= t('nav.start') %></a>
+        <% if (typeof signupsOpen !== 'undefined' && signupsOpen) { %>
+          <a href="/register" class="btn btn-primary btn-sm"><%= t('nav.start') %></a>
+        <% } %>
       <% } %>
       <div class="lang-switch" role="group" aria-label="<%= t('lang.switch_label') %>">
         <a class="lang-btn <%= lang === 'fr' ? 'is-active' : '' %>" href="/lang/fr" hreflang="fr"><%= t('lang.fr') %></a>

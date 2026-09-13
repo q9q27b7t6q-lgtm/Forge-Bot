@@ -92,6 +92,7 @@ app.use(i18nMiddleware);
 app.use((req, res, next) => {
   res.locals.csrfToken = generateToken(req);
   res.locals.escapeHtml = escapeHtml;
+  res.locals.signupsOpen = String(process.env.SIGNUPS_OPEN || '').toLowerCase() === 'true';
   res.locals.user = null;
   res.locals.isLoggedIn = !!(req.session && req.session.userId);
   if (req.session && req.session.userId) {

@@ -168,6 +168,8 @@ module.exports = {
     waive_withdrawal_html:
       'I request immediate activation of the ForgeBot digital service and acknowledge that I lose my 14-day withdrawal right once performance has begun (<a href="/retractation" target="_blank" rel="noopener">details</a>).',
     err_legal_checks: 'Please tick the required boxes (Terms, privacy, immediate activation).',
+    signups_closed: 'Sign-ups are closed for now. Payments are coming soon — the site stays as a preview.',
+    signups_closed_lead: 'Coming soon. Login is only for existing accounts.',
     register_btn: 'Create my account',
     no_account: 'No account yet?',
     signup_link: 'Sign up',
