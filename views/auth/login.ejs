@@ -1,12 +1,12 @@
 <%- include('../partials/head') %>
-<section class="page-hero reveal" style="justify-content:center;text-align:center">
+<section class="page-hero" style="justify-content:center;text-align:center">
   <div>
     <p class="eyebrow"><%= t('auth.login_eyebrow') %></p>
     <h1><%= t('auth.login_title') %></h1>
     <p class="muted"><%= t('auth.login_lead') %></p>
   </div>
 </section>
-<section class="card glass narrow reveal">
+<section class="card glass narrow">
   <% if (error) { %>
     <div class="alert alert-error" role="alert"><%= error %></div>
   <% } %>

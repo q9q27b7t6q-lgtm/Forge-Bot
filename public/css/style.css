@@ -353,10 +353,10 @@ html { scrollbar-color: var(--violet) #07090f; scrollbar-width: thin; }
   to { opacity: 1; transform: none; }
 }
 
-/* Scroll reveal */
+/* Scroll reveal — start visible; never hide forms */
 html.js .reveal {
-  opacity: 0;
-  transform: translateY(22px);
+  opacity: 1;
+  transform: none;
   transition: opacity .75s ease, transform .75s ease;
 }
 .reveal.is-in {

@@ -18,21 +18,7 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Always show reveal content immediately (auth forms must never stay opacity 0)
   var nodes = document.querySelectorAll('.reveal, .card.glass, .cta-band, .page-hero');
-  if (reduce || !('IntersectionObserver' in window)) {
-    for (var i = 0; i < nodes.length; i++) nodes[i].classList.add('is-in');
-    return;
-  }
-
-  var io = new IntersectionObserver(function (entries) {
-    for (var i = 0; i < entries.length; i++) {
-      if (entries[i].isIntersecting) {
-        entries[i].target.classList.add('is-in');
-        io.unobserve(entries[i].target);
-      }
-    }
-  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-
-  for (var j = 0; j < nodes.length; j++) io.observe(nodes[j]);
+  for (var i = 0; i < nodes.length; i++) nodes[i].classList.add('is-in');
 })();
