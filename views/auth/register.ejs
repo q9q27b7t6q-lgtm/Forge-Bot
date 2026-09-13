@@ -25,6 +25,20 @@
       <%= t('auth.password_confirm') %>
       <input type="password" name="password_confirm" required autocomplete="new-password" minlength="8" maxlength="128" />
     </label>
+
+    <label class="checkbox">
+      <input type="checkbox" name="accept_cgv" value="1" required <%= accept_cgv ? 'checked' : '' %> />
+      <span><%- t('auth.accept_cgv_html') %></span>
+    </label>
+    <label class="checkbox">
+      <input type="checkbox" name="accept_privacy" value="1" required <%= accept_privacy ? 'checked' : '' %> />
+      <span><%- t('auth.accept_privacy_html') %></span>
+    </label>
+    <label class="checkbox">
+      <input type="checkbox" name="waive_withdrawal" value="1" required <%= waive_withdrawal ? 'checked' : '' %> />
+      <span><%- t('auth.waive_withdrawal_html') %></span>
+    </label>
+
     <button type="submit" class="btn btn-primary btn-block btn-glow"><%= t('auth.register_btn') %></button>
   </form>
   <p class="muted center"><%= t('auth.has_account') %> <a href="/login"><%= t('auth.login_link') %></a></p>

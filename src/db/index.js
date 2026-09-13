@@ -43,7 +43,30 @@ db.exec(`
     ON tenants(discord_guild_id);
   CREATE INDEX IF NOT EXISTS idx_tenants_user
     ON tenants(user_id);
+
+  CREATE TABLE IF NOT EXISTS content_reports (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    email TEXT NOT NULL,
+    motif TEXT NOT NULL,
+    localisation TEXT NOT NULL,
+    details TEXT NOT NULL,
+    created_at TEXT NOT NULL DEFAULT (datetime('now'))
+  );
 `);
+
+// Migrations légères (SQLite)
+(() => {
+  const cols = db.prepare('PRAGMA table_info(users)').all().map((c) => c.name);
+  const add = (name, sqlType) => {
+    if (!cols.includes(name)) db.exec(`ALTER TABLE users ADD COLUMN ${name} ${sqlType}`);
+  };
+  add('accepted_cgv_at', 'TEXT');
+  add('accepted_privacy_at', 'TEXT');
+  add('waived_withdrawal_at', 'TEXT');
+  add('legal_docs_version', 'TEXT');
+  add('signup_ip', 'TEXT');
+})();
+
 
 const GUILD_ID_RE = /^\d{17,20}$/;
 
@@ -51,11 +74,34 @@ function isValidGuildId(id) {
   return typeof id === 'string' && GUILD_ID_RE.test(id.trim());
 }
 
-function createUser(email, passwordHash) {
+function createUser(email, passwordHash, consent = {}) {
   const stmt = db.prepare(
-    'INSERT INTO users (email, password_hash) VALUES (?, ?)'
+    `INSERT INTO users (
+      email, password_hash,
+      accepted_cgv_at, accepted_privacy_at, waived_withdrawal_at,
+      legal_docs_version, signup_ip
+    ) VALUES (?, ?, ?, ?, ?, ?, ?)`
   );
-  const info = stmt.run(email.trim().toLowerCase(), passwordHash);
+  const now = new Date().toISOString();
+  const info = stmt.run(
+    email.trim().toLowerCase(),
+    passwordHash,
+    consent.accepted_cgv_at || now,
+    consent.accepted_privacy_at || now,
+    consent.waived_withdrawal_at || now,
+    consent.legal_docs_version || '2026-09-13',
+    consent.signup_ip || null
+  );
+  return info.lastInsertRowid;
+}
+
+function createContentReport({ email, motif, localisation, details }) {
+  const info = db
+    .prepare(
+      `INSERT INTO content_reports (email, motif, localisation, details)
+       VALUES (?, ?, ?, ?)`
+    )
+    .run(email.trim().toLowerCase(), motif, localisation, details);
   return info.lastInsertRowid;
 }
 
@@ -162,6 +208,7 @@ module.exports = {
   db,
   isValidGuildId,
   createUser,
+  createContentReport,
   findUserByEmail,
   findUserById,
   listTenantsByUser,

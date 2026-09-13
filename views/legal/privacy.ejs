@@ -1,5 +1,5 @@
 <%- include('../partials/head') %>
-<!-- Document type — à faire valider par un professionnel du droit avant mise en production. -->
+<!-- Document type — modèle dossier conformité sept. 2026 (RGPD). À faire valider par un professionnel du droit avant mise en production. -->
 <section class="page-hero legal-hero">
   <div>
     <p class="eyebrow"><%= t('legal.eyebrow') %></p>
@@ -9,93 +9,148 @@
 </section>
 
 <article class="card glass legal-doc">
-  <h2>1. Responsable du traitement</h2>
   <p>
-    Le responsable du traitement des données personnelles collectées via ForgeBot est&nbsp;:
+    La présente politique décrit le traitement des données personnelles réalisé par
+    <strong>Thomas Henri Treghini</strong>, Entrepreneur individuel (EI), responsable de
+    traitement, pour le Site
+    (<a href="https://forge-bot-jjtb.onrender.com" rel="noopener noreferrer">https://forge-bot-jjtb.onrender.com</a>)
+    et le Service ForgeBot (SaaS — bot Discord FAQ + boutique VIP).
+    Contact confidentialité&nbsp;: <strong>[privacy@domaine.tld]</strong>.
   </p>
+
+  <h2>1. Données collectées et finalités</h2>
+  <h3>Identité Compte</h3>
   <ul>
-    <li><strong>Thomas Henri Treghini</strong> (Crazy), entrepreneur individuel</li>
-    <li><strong>Marque&nbsp;:</strong> ForgeBot</li>
-    <li><strong>SIRET&nbsp;:</strong> à compléter</li>
-    <li><strong>E-mail de contact&nbsp;:</strong> à compléter (ex. contact@forgebot.app)</li>
+    <li><strong>Données&nbsp;:</strong> e-mail, mot de passe hashé, pseudo éventuel, ID Discord lié</li>
+    <li><strong>Finalité&nbsp;:</strong> création et gestion du Compte, fourniture du Service</li>
+    <li><strong>Base légale&nbsp;:</strong> exécution du contrat (art.&nbsp;6.1.b RGPD)</li>
+    <li><strong>Durée&nbsp;:</strong> durée du Compte + 3&nbsp;ans après dernier contact / clôture (recommandation CNIL comptes)</li>
   </ul>
 
-  <h2>2. Données collectées</h2>
-  <p>Dans le cadre du service, nous pouvons traiter notamment&nbsp;:</p>
+  <h3>Données de facturation</h3>
   <ul>
-    <li><strong>Données de compte&nbsp;:</strong> adresse e-mail, mot de passe stocké sous forme de
-      <strong>empreinte (hash)</strong> — le mot de passe en clair n’est jamais conservé&nbsp;;</li>
-    <li><strong>Contenu de configuration&nbsp;:</strong> noms de serveurs, identifiants Discord de
-      serveurs / rôles, textes FAQ et boutique saisis par le Client&nbsp;;</li>
-    <li><strong>Données techniques de session&nbsp;:</strong> cookie de session nécessaire à
-      l’authentification et à la sécurité (CSRF), éventuellement préférence de langue.</li>
-  </ul>
-  <p>
-    Nous ne collectons pas de données de paiement tant qu’aucun prestataire de paiement
-    n’est activé.
-  </p>
-
-  <h2>3. Finalités</h2>
-  <p>Les données sont traitées pour&nbsp;:</p>
-  <ul>
-    <li>créer et gérer le compte utilisateur&nbsp;;</li>
-    <li>fournir le service (configuration bot, accès tableau de bord)&nbsp;;</li>
-    <li>assurer la sécurité (sessions, protection contre les abus)&nbsp;;</li>
-    <li>répondre aux demandes de support&nbsp;;</li>
-    <li>respecter nos obligations légales.</li>
-  </ul>
-  <p>
-    Base légale principale&nbsp;: exécution du contrat (prestation SaaS) et, le cas échéant,
-    intérêt légitime (sécurité) ou obligation légale.
-  </p>
-
-  <h2>4. Cookies</h2>
-  <p>
-    ForgeBot utilise des <strong>cookies de session</strong> strictement nécessaires au
-    fonctionnement du site (connexion, sécurité). Un cookie de préférence de langue peut
-    également être déposé. Ces cookies ne servent pas à de la publicité ciblée.
-  </p>
-
-  <h2>5. Durée de conservation</h2>
-  <ul>
-    <li><strong>Compte actif&nbsp;:</strong> pendant toute la durée d’utilisation du service&nbsp;;</li>
-    <li><strong>Après suppression / résiliation&nbsp;:</strong> suppression ou anonymisation dans un
-      délai raisonnable, sauf obligation légale de conservation plus longue&nbsp;;</li>
-    <li><strong>Sessions&nbsp;:</strong> durée limitée (cookie de session, typiquement jusqu’à 7&nbsp;jours).</li>
+    <li><strong>Données&nbsp;:</strong> nom, adresse, SIRET client pro, historique paiements (pas de n°&nbsp;CB complet&nbsp;: prestataire paiement)</li>
+    <li><strong>Finalité&nbsp;:</strong> facturation, obligations comptables</li>
+    <li><strong>Base légale&nbsp;:</strong> contrat + obligation légale (art.&nbsp;L.123-22 C.&nbsp;com., 10&nbsp;ans pièces comptables)</li>
+    <li><strong>Durée&nbsp;:</strong> 10&nbsp;ans (comptabilité)</li>
   </ul>
 
-  <h2>6. Destinataires et hébergement</h2>
+  <h3>Logs techniques</h3>
+  <ul>
+    <li><strong>Données&nbsp;:</strong> adresse IP, user-agent, date/heure connexion, ID session</li>
+    <li><strong>Finalité&nbsp;:</strong> sécurité, prévention fraude, diagnostic</li>
+    <li><strong>Base légale&nbsp;:</strong> intérêt légitime (sécurité) / obligation légale limitée</li>
+    <li><strong>Durée&nbsp;:</strong> 12&nbsp;mois max pour données techniques de connexion (pratique CPCE / proportionnalité)</li>
+  </ul>
+
+  <h3>Cookie / jeton de session</h3>
+  <ul>
+    <li><strong>Finalité&nbsp;:</strong> rester connecté, sécurité CSRF</li>
+    <li><strong>Base légale&nbsp;:</strong> intérêt légitime / strictement nécessaire (art.&nbsp;82 LIL) — pas de consentement</li>
+    <li><strong>Durée&nbsp;:</strong> session navigateur ou durée courte (ex. 7–30&nbsp;jours si «&nbsp;se souvenir de moi&nbsp;»)</li>
+  </ul>
+
+  <h3>E-mails transactionnels</h3>
+  <ul>
+    <li><strong>Données&nbsp;:</strong> essai, facture, résiliation</li>
+    <li><strong>Finalité&nbsp;:</strong> exécution du Service</li>
+    <li><strong>Base légale&nbsp;:</strong> contrat</li>
+    <li><strong>Durée&nbsp;:</strong> durée nécessaire + preuve 5&nbsp;ans</li>
+  </ul>
+
+  <h3>E-mails marketing (si newsletter)</h3>
+  <ul>
+    <li><strong>Finalité&nbsp;:</strong> prospection</li>
+    <li><strong>Base légale&nbsp;:</strong> consentement (B2C) ou intérêt légitime / opt-out (B2B e-mail pro)</li>
+    <li><strong>Durée&nbsp;:</strong> 3&nbsp;ans après dernier contact actif, ou retrait du consentement</li>
+  </ul>
+
+  <h3>Contenus FAQ / boutique saisis par le Client</h3>
+  <ul>
+    <li><strong>Finalité&nbsp;:</strong> fourniture du Service au Client (ForgeBot sous-traitant si données de tiers)</li>
+    <li><strong>Base légale&nbsp;:</strong> contrat avec le Client&nbsp;; le Client est responsable de traitement vis-à-vis de ses membres</li>
+    <li><strong>Durée&nbsp;:</strong> durée du Compte + 30&nbsp;jours post-résiliation (export)</li>
+  </ul>
+
+  <h3>Signalements abuse</h3>
+  <ul>
+    <li><strong>Finalité&nbsp;:</strong> traitement des notifications DSA / défense en justice</li>
+    <li><strong>Base légale&nbsp;:</strong> obligation légale / intérêt légitime</li>
+    <li><strong>Durée&nbsp;:</strong> le temps du traitement + prescription</li>
+  </ul>
+
+  <h2>2. Cookies</h2>
   <p>
-    Les données sont hébergées chez <strong>Render</strong> (San Francisco / éventuelles régions UE).
-    Elles ne sont communiquées qu’aux prestataires techniques strictement nécessaires à
-    l’hébergement et au fonctionnement du service. <strong>Aucune revente</strong> de données
-    personnelles à des tiers à des fins commerciales n’est effectuée.
+    Cookies strictement nécessaires (session d’authentification, équilibre de charge,
+    sécurité)&nbsp;: déposés sans consentement, mentionnés ici. Cookies de mesure d’audience non
+    exemptés, publicitaires ou de réseaux sociaux&nbsp;: uniquement après consentement via bandeau
+    conforme CNIL (refuser aussi simple qu’accepter, pas de «&nbsp;cookie wall&nbsp;» abusif).
+  </p>
+  <p>
+    Si ForgeBot n’utilise que la session&nbsp;: seuls les cookies strictement nécessaires sont
+    déposés. Google Analytics (ou équivalent) ne sera pas installé sans CMP conforme.
   </p>
 
-  <h2>7. Vos droits (RGPD)</h2>
+  <h2>3. Destinataires et sous-traitants</h2>
+  <p>Données accessibles aux personnes habilitées de ForgeBot. Sous-traitants typiques&nbsp;:</p>
+  <ul>
+    <li>
+      <strong>Render Services, Inc.</strong> (hébergement — États-Unis / régions au choix)&nbsp;:
+      transfert hors UE à encadrer (CCT / clauses types + évaluation transfer / Data Privacy
+      Framework si applicable). Adresse&nbsp;: 525 Brannan Street, Suite&nbsp;300, San Francisco,
+      CA&nbsp;94107, USA — <a href="https://render.com" rel="noopener noreferrer" target="_blank">https://render.com</a>.
+    </li>
+    <li>
+      <strong>[Prestataire de paiement — ex. Stripe]</strong> — données de paiement.
+      Ne stockez jamais le PAN côté ForgeBot.
+    </li>
+    <li>
+      <strong>[Prestataire e-mail — ex. Brevo, Postmark… — privilégier un acteur UE]</strong>.
+    </li>
+    <li>
+      <strong>Discord Inc.</strong> si le Client relie son serveur&nbsp;: le Client configure cette
+      connexion.
+    </li>
+  </ul>
+  <p>Aucun fichier n’est vendu. Pas de transfert hors des finalités déclarées.</p>
+
+  <h2>4. Transferts hors UE</h2>
   <p>
-    Conformément au Règlement (UE) 2016/679 (RGPD) et à la loi Informatique et Libertés,
-    vous disposez d’un droit d’<strong>accès</strong>, de <strong>rectification</strong>,
-    d’<strong>effacement</strong>, de <strong>limitation</strong>, de
-    <strong>portabilité</strong> (lorsque applicable) et d’opposition.
-  </p>
-  <p>
-    Pour exercer vos droits, écrivez à l’e-mail de contact indiqué ci-dessus en précisant
-    l’adresse e-mail de votre compte. Vous pouvez également introduire une réclamation auprès
-    de la CNIL (<a href="https://www.cnil.fr" rel="noopener noreferrer" target="_blank">www.cnil.fr</a>).
+    L’hébergement Render implique un transfert vers les États-Unis. ForgeBot s’appuie sur les
+    mécanismes de l’art.&nbsp;46 RGPD (clauses contractuelles types de la Commission) et, le cas
+    échéant, le cadre d’adéquation applicable. Le Client en est informé. Alternative
+    recommandée&nbsp;: choisir une région d’hébergement dans l’UE chez Render ou un hébergeur UE
+    pour réduire le risque. Région actuellement utilisée&nbsp;:
+    <strong>[Région Render effectivement utilisée]</strong>.
   </p>
 
-  <h2>8. Sécurité</h2>
+  <h2>5. Droits des personnes</h2>
   <p>
-    Nous mettons en œuvre des mesures raisonnables (hachage des mots de passe, sessions
-    sécurisées, protection CSRF, limitation des tentatives de connexion) pour protéger vos
-    données. Aucun système n’étant totalement inviolable, nous vous invitons à choisir un
-    mot de passe robuste et unique.
+    Accès, rectification, effacement, limitation, opposition, portabilité, retrait du
+    consentement, directives post-mortem (LIL). Demande&nbsp;:
+    <strong>[privacy@domaine.tld]</strong>. Réponse sous 1&nbsp;mois.
+  </p>
+  <p>
+    Réclamation&nbsp;: CNIL, 3 Place de Fontenoy, TSA&nbsp;80715, 75334 Paris Cedex&nbsp;07 —
+    <a href="https://www.cnil.fr" rel="noopener noreferrer" target="_blank">www.cnil.fr</a>.
   </p>
 
-  <h2>9. Contact</h2>
+  <h2>6. Mineurs</h2>
   <p>
-    E-mail de contact&nbsp;: à compléter (ex. contact@forgebot.app).<br />
+    Le Service s’adresse à des administrateurs de serveurs de jeux, en principe majeurs.
+    Pas de Compte pour les mineurs de moins de 15&nbsp;ans sans titulaire de l’autorité parentale
+    (seuil français du consentement numérique).
+  </p>
+
+  <h2>7. Identification de l’éditeur</h2>
+  <ul>
+    <li><strong>Thomas Henri Treghini</strong>, Entrepreneur individuel (EI)</li>
+    <li><strong>Adresse&nbsp;:</strong> [ADRESSE COMPLÈTE — numéro, rue, code postal, ville, France]</li>
+    <li><strong>SIRET&nbsp;:</strong> [14 CHIFFRES] &nbsp;•&nbsp; <strong>SIREN&nbsp;:</strong> [9 CHIFFRES]</li>
+    <li><strong>TVA&nbsp;:</strong> TVA non applicable, art.&nbsp;293&nbsp;B du CGI</li>
+    <li><strong>Contact&nbsp;:</strong> [contact@domaine.tld] &nbsp;•&nbsp; [privacy@domaine.tld]</li>
+  </ul>
+  <p>
     Voir aussi les <a href="/mentions-legales"><%= t('legal.mentions_nav') %></a>.
   </p>
 

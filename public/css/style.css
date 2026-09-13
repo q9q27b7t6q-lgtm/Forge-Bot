@@ -690,7 +690,7 @@ input:focus, textarea:focus {
   box-shadow: 0 0 0 3px rgba(56, 232, 255, 0.15);
 }
 .checkbox {
-  display: flex !important; flex-direction: row !important; align-items: center; gap: .6rem;
+  display: flex !important; flex-direction: row !important; align-items: flex-start; gap: .6rem;
   font-weight: 500 !important;
 }
 .checkbox input { width: auto; accent-color: var(--cyan); }
@@ -703,6 +703,14 @@ input:focus, textarea:focus {
 
 .alert {
   padding: .85rem 1rem; border-radius: 12px; margin-bottom: 1rem; font-size: .95rem;
+}
+.alert-ok {
+  background: rgba(46,229,157,.12);
+  border: 1px solid rgba(46,229,157,.35);
+  color: var(--success);
+  padding: .75rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
 }
 .alert-error {
   background: rgba(255, 77, 109, 0.12); border: 1px solid rgba(255, 77, 109, 0.35); color: #ffb3c1;

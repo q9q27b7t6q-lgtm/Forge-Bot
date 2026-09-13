@@ -1,0 +1,48 @@
+<%- include('../partials/head') %>
+<section class="page-hero legal-hero">
+  <div>
+    <p class="eyebrow"><%= t('legal.eyebrow') %></p>
+    <h1><%= t('legal.signalement_title') %></h1>
+    <p class="muted"><%= t('legal.signalement_lead') %></p>
+  </div>
+</section>
+<section class="card glass legal-doc">
+  <% if (typeof success !== 'undefined' && success) { %>
+    <div class="alert alert-ok" role="status"><%= t('legal.signalement_thanks') %></div>
+  <% } %>
+  <% if (error) { %>
+    <div class="alert alert-error" role="alert"><%= error %></div>
+  <% } %>
+  <form method="post" action="/signalement" class="form">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+    <label>
+      <%= t('legal.signalement_email') %>
+      <input type="email" name="email" required maxlength="254" value="<%= escapeHtml(email || '') %>" />
+    </label>
+    <label>
+      <%= t('legal.signalement_motif') %>
+      <select name="motif" required>
+        <option value=""><%= t('legal.signalement_motif_pick') %></option>
+        <option value="illegal">Contenu illicite / illégal</option>
+        <option value="hate">Haine / discrimination</option>
+        <option value="scam">Arnaque / fraude</option>
+        <option value="ip">Atteinte aux droits (marque, copyright)</option>
+        <option value="other">Autre</option>
+      </select>
+    </label>
+    <label>
+      <%= t('legal.signalement_where') %>
+      <input type="text" name="localisation" required maxlength="500" placeholder="Serveur Discord, ID FAQ, URL…" value="<%= escapeHtml(localisation || '') %>" />
+    </label>
+    <label>
+      <%= t('legal.signalement_details') %>
+      <textarea name="details" required maxlength="4000" rows="6"><%= escapeHtml(details || '') %></textarea>
+    </label>
+    <label class="checkbox">
+      <input type="checkbox" name="bonne_foi" value="1" required />
+      <span><%= t('legal.signalement_bonne_foi') %></span>
+    </label>
+    <button type="submit" class="btn btn-primary"><%= t('legal.signalement_submit') %></button>
+  </form>
+</section>
+<%- include('../partials/foot') %>

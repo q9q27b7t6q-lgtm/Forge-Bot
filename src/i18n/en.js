@@ -27,6 +27,7 @@ module.exports = {
     legal_cgv: 'Terms of sale',
     legal_privacy: 'Privacy',
     legal_retractation: 'Withdrawal',
+    legal_signalement: 'Report content',
     copy: 'ForgeBot · Built for gaming communities',
   },
   landing: {
@@ -123,7 +124,7 @@ module.exports = {
     p3_period: '/ month',
     p3_l1: 'Up to 10 servers',
     p3_l2: 'Advanced staff roles',
-    p3_l3: 'Onboarding help',
+    p3_l3: 'Ready-to-paste FAQ / shop templates',
     p3_cta: 'Contact',
     pricing_note:
       'Paid plans arrive soon (online payment) — teaser only for this prototype.',
@@ -131,7 +132,7 @@ module.exports = {
     faq_title: 'Frequently asked questions',
     faq1_q: 'How does it work in practice?',
     faq1_a:
-      'Create an account, add a server with its Discord ID (right-click server → Copy Server ID with Developer Mode on), fill FAQ and shop in Markdown, invite the bot, then run npm run bot. The bot only reads your space content.',
+      'Create an account, add a server with its Discord ID (right-click server → Copy Server ID with Developer Mode on), fill FAQ and shop in Markdown, invite the ForgeBot to your Discord. The bot only reads your space — nothing to install on your PC.',
     faq2_q: 'Do I need an external AI?',
     faq2_a:
       'No. The bot reads your FAQ and shop (Markdown text + keywords) — fast, predictable, no cloud AI cost. Answers stay exactly what you wrote.',
@@ -160,6 +161,13 @@ module.exports = {
     password_hint: '(min. 8 characters)',
     password_confirm: 'Confirm password',
     login_btn: 'Log in',
+    accept_cgv_html:
+      'I have read and accept the <a href="/cgv" target="_blank" rel="noopener">Terms</a> (version 13/09/2026).',
+    accept_privacy_html:
+      'I have read the <a href="/confidentialite" target="_blank" rel="noopener">Privacy Policy</a>.',
+    waive_withdrawal_html:
+      'I request immediate activation of the ForgeBot digital service and acknowledge that I lose my 14-day withdrawal right once performance has begun (<a href="/retractation" target="_blank" rel="noopener">details</a>).',
+    err_legal_checks: 'Please tick the required boxes (Terms, privacy, immediate activation).',
     register_btn: 'Create my account',
     no_account: 'No account yet?',
     signup_link: 'Sign up',
@@ -248,6 +256,19 @@ module.exports = {
     privacy_nav: 'Privacy',
     retractation_title: 'Right of withdrawal',
     retractation_nav: 'Withdrawal',
+    signalement_title: 'Report content',
+    signalement_lead:
+      'Notice-and-action form for hosted client content (FAQ / shop). Good-faith statement required.',
+    signalement_email: 'Your email',
+    signalement_motif: 'Reason',
+    signalement_motif_pick: 'Choose…',
+    signalement_where: 'Where is the content',
+    signalement_details: 'Description',
+    signalement_bonne_foi:
+      'I declare that I am acting in good faith and that the information provided is accurate.',
+    signalement_submit: 'Submit report',
+    signalement_thanks: 'Report recorded. We will review it promptly.',
+    signalement_err: 'Incomplete form or invalid email.',
   },
   errors: {
     csrf_title: 'Invalid security token',

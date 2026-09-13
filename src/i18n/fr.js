@@ -27,6 +27,7 @@ module.exports = {
     legal_cgv: 'CGV',
     legal_privacy: 'Confidentialité',
     legal_retractation: 'Rétractation',
+    legal_signalement: 'Signalement',
     copy: 'ForgeBot · Fait pour les communautés FR',
   },
   landing: {
@@ -125,7 +126,7 @@ module.exports = {
     p3_period: '/ mois',
     p3_l1: 'Jusqu’à 10 serveurs',
     p3_l2: 'Rôles staff avancés',
-    p3_l3: 'Accompagnement à la mise en service',
+    p3_l3: 'Modèles FAQ / boutique prêts à coller',
     p3_cta: 'Contacter',
     pricing_note:
       'Les offres payantes arrivent bientôt (paiement en ligne) — teaser uniquement pour ce prototype.',
@@ -133,7 +134,7 @@ module.exports = {
     faq_title: 'Questions fréquentes',
     faq1_q: 'Comment ça marche concrètement ?',
     faq1_a:
-      'Vous créez un compte, ajoutez un serveur avec l’ID Discord (clic droit sur le serveur → Copier l’identifiant du serveur, mode développeur activé), renseignez FAQ et boutique en Markdown, invitez le bot, puis lancez npm run bot. Le bot lit uniquement le contenu de votre espace.',
+      'Vous créez un compte, ajoutez un serveur avec l’ID Discord (clic droit sur le serveur → Copier l’identifiant du serveur, mode développeur activé), renseignez FAQ et boutique en Markdown, invitez le bot ForgeBot sur votre Discord. Le bot lit uniquement le contenu de votre espace — rien à installer sur votre PC.',
     faq2_q: 'Faut-il une intelligence artificielle externe ?',
     faq2_a:
       'Non. Le bot lit ta FAQ et ta boutique (texte Markdown + mots-clés) — rapide, prévisible, sans coût d’IA cloud. Les réponses restent exactement celles que tu as écrites.',
@@ -162,6 +163,13 @@ module.exports = {
     password_hint: '(min. 8 caractères)',
     password_confirm: 'Confirmer le mot de passe',
     login_btn: 'Se connecter',
+    accept_cgv_html:
+      'J’ai lu et j’accepte les <a href="/cgv" target="_blank" rel="noopener">Conditions générales</a> (version du 13/09/2026).',
+    accept_privacy_html:
+      'J’ai lu la <a href="/confidentialite" target="_blank" rel="noopener">Politique de confidentialité</a>.',
+    waive_withdrawal_html:
+      'Je demande l’activation immédiate du service numérique ForgeBot et je reconnais perdre mon droit de rétractation de 14 jours dès que l’exécution a commencé (<a href="/retractation" target="_blank" rel="noopener">détails</a>).',
+    err_legal_checks: 'Cochez les cases obligatoires (CGV, confidentialité, activation immédiate).',
     register_btn: 'Créer mon compte',
     no_account: 'Pas encore de compte ?',
     signup_link: 'S’inscrire',
@@ -252,6 +260,19 @@ module.exports = {
     privacy_nav: 'Confidentialité',
     retractation_title: 'Droit de rétractation',
     retractation_nav: 'Rétractation',
+    signalement_title: 'Signaler un contenu',
+    signalement_lead:
+      'Mécanisme de signalement (contenus client hébergés : FAQ / boutique). Déclaration de bonne foi requise.',
+    signalement_email: 'Votre e-mail',
+    signalement_motif: 'Motif',
+    signalement_motif_pick: 'Choisir…',
+    signalement_where: 'Localisation du contenu',
+    signalement_details: 'Description',
+    signalement_bonne_foi:
+      'Je déclare agir de bonne foi et que les informations fournies sont exactes.',
+    signalement_submit: 'Envoyer le signalement',
+    signalement_thanks: 'Signalement enregistré. Nous l’examinerons rapidement.',
+    signalement_err: 'Formulaire incomplet ou e-mail invalide.',
   },
   errors: {
     csrf_title: 'Jeton de sécurité invalide',

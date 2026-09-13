@@ -26,6 +26,9 @@ router.get('/register', guestOnly, (req, res) => {
     title: res.locals.t('auth.title_register'),
     error: null,
     email: '',
+    accept_cgv: false,
+    accept_privacy: false,
+    waive_withdrawal: false,
   });
 });
 
@@ -35,11 +38,18 @@ router.post('/register', guestOnly, authLimiter, async (req, res) => {
   const passwordConfirm = req.body.password_confirm || '';
   const t = res.locals.t;
 
+  const acceptCgv = req.body.accept_cgv === '1' || req.body.accept_cgv === 'on';
+  const acceptPrivacy = req.body.accept_privacy === '1' || req.body.accept_privacy === 'on';
+  const waiveWithdrawal = req.body.waive_withdrawal === '1' || req.body.waive_withdrawal === 'on';
+
   const renderErr = (msg) =>
     res.status(400).render('auth/register', {
       title: t('auth.title_register'),
       error: msg,
       email,
+      accept_cgv: acceptCgv,
+      accept_privacy: acceptPrivacy,
+      waive_withdrawal: waiveWithdrawal,
     });
 
   if (!isValidEmail(email)) {
@@ -51,6 +61,9 @@ router.post('/register', guestOnly, authLimiter, async (req, res) => {
   if (password !== passwordConfirm) {
     return renderErr(t('auth.err_password_mismatch'));
   }
+  if (!acceptCgv || !acceptPrivacy || !waiveWithdrawal) {
+    return renderErr(t('auth.err_legal_checks'));
+  }
 
   const existing = findUserByEmail(email);
   if (existing) {
@@ -59,7 +72,18 @@ router.post('/register', guestOnly, authLimiter, async (req, res) => {
 
   try {
     const hash = await bcrypt.hash(password, BCRYPT_ROUNDS);
-    const userId = createUser(email, hash);
+    const now = new Date().toISOString();
+    const userId = createUser(email, hash, {
+      accepted_cgv_at: now,
+      accepted_privacy_at: now,
+      waived_withdrawal_at: now,
+      legal_docs_version: '2026-09-13',
+      signup_ip: (req.headers['x-forwarded-for'] || req.ip || '')
+        .toString()
+        .split(',')[0]
+        .trim()
+        .slice(0, 64),
+    });
     req.session.userId = userId;
     req.session.userEmail = email.trim().toLowerCase();
     return req.session.save(() => res.redirect('/dashboard'));
