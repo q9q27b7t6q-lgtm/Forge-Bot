@@ -1,0 +1,87 @@
+<%- include('../partials/head') %>
+<!-- Document type — à faire valider par un professionnel du droit avant mise en production. -->
+<section class="page-hero legal-hero">
+  <div>
+    <p class="eyebrow"><%= t('legal.eyebrow') %></p>
+    <h1><%= t('legal.retractation_title') %></h1>
+    <p class="muted"><%= t('legal.updated') %></p>
+  </div>
+</section>
+
+<article class="card glass legal-doc">
+  <h2>1. Droit de rétractation (consommateurs)</h2>
+  <p>
+    Conformément aux articles L.221-18 et suivants du Code de la consommation, le Client
+    consommateur dispose d’un délai de <strong>quatorze (14) jours</strong> pour exercer son
+    droit de rétractation sans motif, à compter de la conclusion du contrat
+    (inscription / souscription à distance).
+  </p>
+
+  <h2>2. Service numérique commencé immédiatement</h2>
+  <p>
+    ForgeBot est un <strong>service numérique</strong> (accès à une plateforme SaaS et à un bot
+    Discord) dont l’exécution peut commencer <strong>immédiatement</strong> après l’inscription
+    ou l’activation de l’essai.
+  </p>
+  <p>
+    Dans ce cas, le droit de rétractation ne s’applique plus lorsque le consommateur a
+    expressément demandé que l’exécution commence avant la fin du délai de 14&nbsp;jours et a
+    <strong>renoncé à son droit de rétractation</strong> en cochant une case dédiée
+    (article L.221-28, 13° du Code de la consommation).
+  </p>
+  <p>
+    <strong>Note produit&nbsp;:</strong> le formulaire d’inscription intégrera prochainement une
+    case à cocher de renonciation claire (consentement exprès) lorsque le service démarre
+    immédiatement. Tant que cette case n’est pas en place, le droit de rétractation de 14&nbsp;jours
+    reste applicable dans les conditions légales.
+  </p>
+
+  <h2>3. Comment exercer le droit de rétractation</h2>
+  <p>
+    Pour exercer votre droit de rétractation (lorsqu’il est encore ouvert), envoyez une demande
+    claire par e-mail à&nbsp;:
+  </p>
+  <ul>
+    <li><strong>E-mail&nbsp;:</strong> à compléter (ex. contact@forgebot.app)</li>
+  </ul>
+  <p>Indiquez&nbsp;:</p>
+  <ul>
+    <li>votre nom&nbsp;;</li>
+    <li>l’adresse e-mail du compte ForgeBot&nbsp;;</li>
+    <li>la mention «&nbsp;Rétractation&nbsp;»&nbsp;;</li>
+    <li>la date d’inscription / souscription.</li>
+  </ul>
+  <p>
+    Vous pouvez utiliser le formulaire type de rétractation prévu à l’annexe de l’article
+    R.221-1 du Code de la consommation, ou tout autre déclaration dénuée d’ambiguïté.
+  </p>
+
+  <h2>4. Effets de la rétractation</h2>
+  <p>
+    En cas de rétractation valide, l’accès au service est interrompu et, le cas échéant, les
+    sommes versées sont remboursées dans les délais légaux, déduction faite, si la loi le
+    permet, de la part proportionnelle du service déjà fourni avant la rétractation lorsque
+    l’exécution a commencé avec votre accord.
+  </p>
+
+  <h2>5. Clients professionnels</h2>
+  <p>
+    Le droit de rétractation prévu par le Code de la consommation ne s’applique pas aux
+    contrats conclus entre professionnels, sauf conditions particulières convenues par écrit.
+  </p>
+
+  <h2>6. Contact</h2>
+  <p>
+    E-mail de contact&nbsp;: à compléter (ex. contact@forgebot.app).<br />
+    Documents associés&nbsp;:
+    <a href="/cgv"><%= t('legal.cgv_nav') %></a> ·
+    <a href="/mentions-legales"><%= t('legal.mentions_nav') %></a>.
+  </p>
+
+  <nav class="legal-nav" aria-label="<%= t('legal.nav_label') %>">
+    <a href="/mentions-legales"><%= t('legal.mentions_nav') %></a>
+    <a href="/cgv"><%= t('legal.cgv_nav') %></a>
+    <a href="/confidentialite"><%= t('legal.privacy_nav') %></a>
+  </nav>
+</article>
+<%- include('../partials/foot') %>

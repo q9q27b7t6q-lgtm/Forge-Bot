@@ -23,6 +23,10 @@ module.exports = {
     how: 'Getting started',
     pricing: 'Pricing',
     status: 'Service status',
+    legal_mentions: 'Legal notice',
+    legal_cgv: 'Terms of sale',
+    legal_privacy: 'Privacy',
+    legal_retractation: 'Withdrawal',
     copy: 'ForgeBot · Built for gaming communities',
   },
   landing: {
@@ -55,7 +59,7 @@ module.exports = {
     features_eyebrow: 'Useful power',
     features_title: 'Everything a pro server needs',
     features_lead:
-      'From Markdown to a Discord reply in seconds — no bloated pipeline.',
+      'Write your FAQ and shop. The bot answers on Discord. Simple.',
     f1_title: 'Knowledge base / FAQ',
     f1_body:
       'Write your base in Markdown. The bot finds the right section by keywords. Mentions or !faq.',
@@ -76,7 +80,7 @@ module.exports = {
       'Ready to install on a small VPS. Next: online payments and Discord login.',
     how_eyebrow: 'Getting started',
     how_title: 'Live in 3 steps',
-    how_lead: 'No obscure pipeline — just what you need.',
+    how_lead: 'Create an account, paste your FAQ and shop, invite the bot. That’s it.',
     how1_title: 'Create your space',
     how1_body: 'Sign up in 2 minutes. One owner account, isolated servers.',
     how2_title: 'Paste FAQ & shop',
@@ -86,7 +90,7 @@ module.exports = {
     how3_body: 'Invite the bot to your Discord, start it, and you’re live on your server.',
     journey_eyebrow: 'Customer journey',
     journey_title: 'From signup to a live bot',
-    journey_lead: 'Typical path for a DayZ / Rust / FiveM server owner.',
+    journey_lead: 'Typical path for a DayZ, Rust, or GTA V (FiveM) server owner.',
     j1_title: 'Account',
     j1_body: 'Create an email / password account on ForgeBot.',
     j2_title: 'Server',
@@ -230,6 +234,20 @@ module.exports = {
     invite_howto:
       '1) Open the Discord Developer Portal → Applications → your bot.\n2) General Information: copy the Application ID (Client ID).\n3) Paste into .env: DISCORD_CLIENT_ID=…\n4) Restart ForgeBot (npm start / node src/server.js).',
     invite_template: 'Invite URL template:',
+  },
+
+  legal: {
+    eyebrow: 'Legal information',
+    nav_label: 'Other legal documents',
+    updated: 'Last updated: September 2026',
+    mentions_title: 'Legal notice',
+    mentions_nav: 'Legal notice',
+    cgv_title: 'Terms and conditions of sale',
+    cgv_nav: 'Terms of sale',
+    privacy_title: 'Privacy policy',
+    privacy_nav: 'Privacy',
+    retractation_title: 'Right of withdrawal',
+    retractation_nav: 'Withdrawal',
   },
   errors: {
     csrf_title: 'Invalid security token',

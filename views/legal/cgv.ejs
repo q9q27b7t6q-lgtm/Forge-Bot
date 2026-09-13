@@ -1,0 +1,119 @@
+<%- include('../partials/head') %>
+<!-- Document type — à faire valider par un professionnel du droit avant mise en production. -->
+<section class="page-hero legal-hero">
+  <div>
+    <p class="eyebrow"><%= t('legal.eyebrow') %></p>
+    <h1><%= t('legal.cgv_title') %></h1>
+    <p class="muted"><%= t('legal.updated') %></p>
+  </div>
+</section>
+
+<article class="card glass legal-doc">
+  <h2>1. Objet</h2>
+  <p>
+    Les présentes Conditions Générales de Vente («&nbsp;CGV&nbsp;») régissent l’accès et l’utilisation
+    du service <strong>ForgeBot</strong>, plateforme de location / configuration de bots Discord
+    pour serveurs de jeux, proposée par Thomas Henri Treghini (entrepreneur individuel),
+    ci-après «&nbsp;l’Éditeur&nbsp;».
+  </p>
+  <p>
+    Toute inscription ou utilisation du service vaut acceptation des présentes CGV.
+  </p>
+
+  <h2>2. Description du service</h2>
+  <p>
+    ForgeBot permet au Client de créer un compte, de configurer un ou plusieurs espaces liés à des
+    serveurs Discord (FAQ, boutique, paramètres), et d’utiliser un bot Discord associé.
+    Le service s’adresse aussi bien aux particuliers (B2C) qu’aux professionnels (B2B).
+  </p>
+
+  <h2>3. Essai gratuit et abonnement</h2>
+  <p>
+    Sauf offre contraire affichée sur le site, le Client bénéficie d’un
+    <strong>essai gratuit de 3&nbsp;jours</strong> à compter de l’activation du service.
+    À l’issue de cette période, l’accès aux fonctionnalités payantes nécessite un
+    <strong>abonnement payant</strong> selon l’offre choisie.
+  </p>
+  <p>
+    Les modalités de paiement en ligne seront précisées lors de leur mise en place.
+    Aucun moyen de paiement n’est encore actif sur le présent prototype.
+  </p>
+
+  <h2>4. Prix</h2>
+  <p>
+    Les prix affichés sur le site sont indiqués en euros et
+    <strong>toutes taxes comprises (TTC)</strong>, sauf mention contraire.
+    L’Éditeur se réserve le droit de modifier ses tarifs&nbsp;; les nouvelles conditions
+    s’appliquent aux renouvellements et nouvelles souscriptions.
+  </p>
+
+  <h2>5. Obligations du Client</h2>
+  <p>Le Client s’engage à&nbsp;:</p>
+  <ul>
+    <li>fournir des informations exactes lors de l’inscription&nbsp;;</li>
+    <li>conserver la confidentialité de ses identifiants&nbsp;;</li>
+    <li>
+      n’utiliser le service et le bot Discord que pour des contenus
+      <strong>légaux</strong>, conformes aux conditions d’utilisation de Discord et à la
+      réglementation applicable (notamment pas de contenus illicites, haineux, frauduleux
+      ou portant atteinte aux droits de tiers)&nbsp;;
+    </li>
+    <li>
+      rester seul responsable des contenus (FAQ, boutique, messages) qu’il configure et
+      que le bot peut diffuser sur ses serveurs Discord.
+    </li>
+  </ul>
+
+  <h2>6. Obligations de l’Éditeur</h2>
+  <p>
+    L’Éditeur s’efforce d’assurer la disponibilité et la sécurité raisonnables du service.
+    Des maintenances ou interruptions (Discord, hébergeur, réseau) peuvent survenir sans
+    que cela constitue un manquement grave.
+  </p>
+
+  <h2>7. Résiliation</h2>
+  <p>
+    Le Client peut résilier son abonnement à tout moment depuis son espace (lorsque disponible)
+    ou en écrivant à l’e-mail de contact indiqué dans les mentions légales.
+    La résiliation prend effet à la fin de la période déjà réglée, sauf disposition contraire
+    d’une offre. L’Éditeur peut suspendre ou résilier l’accès en cas de manquement grave
+    aux présentes CGV ou d’usage illicite.
+  </p>
+
+  <h2>8. Responsabilité</h2>
+  <p>
+    Dans les limites autorisées par la loi, la responsabilité de l’Éditeur est
+    <strong>limitée</strong> au montant des sommes effectivement payées par le Client au titre
+    des trois (3) derniers mois précédant le fait générateur. L’Éditeur n’est pas responsable
+    des dommages indirects (perte de clientèle, perte de données côté Client, interruption
+    d’activité sur Discord, etc.), ni des contenus publiés par le Client.
+  </p>
+
+  <h2>9. Droit applicable et litiges</h2>
+  <p>
+    Les présentes CGV sont soumises au <strong>droit français</strong>.
+  </p>
+  <p>
+    En cas de litige avec un consommateur, celui-ci peut recourir gratuitement à un
+    <strong>médiateur de la consommation</strong>, conformément aux articles L.611-1 et suivants
+    du Code de la consommation. Les coordonnées du médiateur seront communiquées dès
+    désignation. À défaut d’accord amiable, les tribunaux français compétents seront saisis.
+  </p>
+  <p>
+    Pour les Clients professionnels, les litiges relèvent des tribunaux compétents du ressort
+    du siège de l’Éditeur, sauf règles d’ordre public contraires.
+  </p>
+
+  <h2>10. Contact</h2>
+  <p>
+    E-mail de contact&nbsp;: à compléter (ex. contact@forgebot.app).<br />
+    Voir aussi les <a href="/mentions-legales"><%= t('legal.mentions_nav') %></a>.
+  </p>
+
+  <nav class="legal-nav" aria-label="<%= t('legal.nav_label') %>">
+    <a href="/mentions-legales"><%= t('legal.mentions_nav') %></a>
+    <a href="/confidentialite"><%= t('legal.privacy_nav') %></a>
+    <a href="/retractation"><%= t('legal.retractation_nav') %></a>
+  </nav>
+</article>
+<%- include('../partials/foot') %>

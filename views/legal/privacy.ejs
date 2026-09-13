@@ -1,0 +1,108 @@
+<%- include('../partials/head') %>
+<!-- Document type — à faire valider par un professionnel du droit avant mise en production. -->
+<section class="page-hero legal-hero">
+  <div>
+    <p class="eyebrow"><%= t('legal.eyebrow') %></p>
+    <h1><%= t('legal.privacy_title') %></h1>
+    <p class="muted"><%= t('legal.updated') %></p>
+  </div>
+</section>
+
+<article class="card glass legal-doc">
+  <h2>1. Responsable du traitement</h2>
+  <p>
+    Le responsable du traitement des données personnelles collectées via ForgeBot est&nbsp;:
+  </p>
+  <ul>
+    <li><strong>Thomas Henri Treghini</strong> (Crazy), entrepreneur individuel</li>
+    <li><strong>Marque&nbsp;:</strong> ForgeBot</li>
+    <li><strong>SIRET&nbsp;:</strong> à compléter</li>
+    <li><strong>E-mail de contact&nbsp;:</strong> à compléter (ex. contact@forgebot.app)</li>
+  </ul>
+
+  <h2>2. Données collectées</h2>
+  <p>Dans le cadre du service, nous pouvons traiter notamment&nbsp;:</p>
+  <ul>
+    <li><strong>Données de compte&nbsp;:</strong> adresse e-mail, mot de passe stocké sous forme de
+      <strong>empreinte (hash)</strong> — le mot de passe en clair n’est jamais conservé&nbsp;;</li>
+    <li><strong>Contenu de configuration&nbsp;:</strong> noms de serveurs, identifiants Discord de
+      serveurs / rôles, textes FAQ et boutique saisis par le Client&nbsp;;</li>
+    <li><strong>Données techniques de session&nbsp;:</strong> cookie de session nécessaire à
+      l’authentification et à la sécurité (CSRF), éventuellement préférence de langue.</li>
+  </ul>
+  <p>
+    Nous ne collectons pas de données de paiement tant qu’aucun prestataire de paiement
+    n’est activé.
+  </p>
+
+  <h2>3. Finalités</h2>
+  <p>Les données sont traitées pour&nbsp;:</p>
+  <ul>
+    <li>créer et gérer le compte utilisateur&nbsp;;</li>
+    <li>fournir le service (configuration bot, accès tableau de bord)&nbsp;;</li>
+    <li>assurer la sécurité (sessions, protection contre les abus)&nbsp;;</li>
+    <li>répondre aux demandes de support&nbsp;;</li>
+    <li>respecter nos obligations légales.</li>
+  </ul>
+  <p>
+    Base légale principale&nbsp;: exécution du contrat (prestation SaaS) et, le cas échéant,
+    intérêt légitime (sécurité) ou obligation légale.
+  </p>
+
+  <h2>4. Cookies</h2>
+  <p>
+    ForgeBot utilise des <strong>cookies de session</strong> strictement nécessaires au
+    fonctionnement du site (connexion, sécurité). Un cookie de préférence de langue peut
+    également être déposé. Ces cookies ne servent pas à de la publicité ciblée.
+  </p>
+
+  <h2>5. Durée de conservation</h2>
+  <ul>
+    <li><strong>Compte actif&nbsp;:</strong> pendant toute la durée d’utilisation du service&nbsp;;</li>
+    <li><strong>Après suppression / résiliation&nbsp;:</strong> suppression ou anonymisation dans un
+      délai raisonnable, sauf obligation légale de conservation plus longue&nbsp;;</li>
+    <li><strong>Sessions&nbsp;:</strong> durée limitée (cookie de session, typiquement jusqu’à 7&nbsp;jours).</li>
+  </ul>
+
+  <h2>6. Destinataires et hébergement</h2>
+  <p>
+    Les données sont hébergées chez <strong>Render</strong> (San Francisco / éventuelles régions UE).
+    Elles ne sont communiquées qu’aux prestataires techniques strictement nécessaires à
+    l’hébergement et au fonctionnement du service. <strong>Aucune revente</strong> de données
+    personnelles à des tiers à des fins commerciales n’est effectuée.
+  </p>
+
+  <h2>7. Vos droits (RGPD)</h2>
+  <p>
+    Conformément au Règlement (UE) 2016/679 (RGPD) et à la loi Informatique et Libertés,
+    vous disposez d’un droit d’<strong>accès</strong>, de <strong>rectification</strong>,
+    d’<strong>effacement</strong>, de <strong>limitation</strong>, de
+    <strong>portabilité</strong> (lorsque applicable) et d’opposition.
+  </p>
+  <p>
+    Pour exercer vos droits, écrivez à l’e-mail de contact indiqué ci-dessus en précisant
+    l’adresse e-mail de votre compte. Vous pouvez également introduire une réclamation auprès
+    de la CNIL (<a href="https://www.cnil.fr" rel="noopener noreferrer" target="_blank">www.cnil.fr</a>).
+  </p>
+
+  <h2>8. Sécurité</h2>
+  <p>
+    Nous mettons en œuvre des mesures raisonnables (hachage des mots de passe, sessions
+    sécurisées, protection CSRF, limitation des tentatives de connexion) pour protéger vos
+    données. Aucun système n’étant totalement inviolable, nous vous invitons à choisir un
+    mot de passe robuste et unique.
+  </p>
+
+  <h2>9. Contact</h2>
+  <p>
+    E-mail de contact&nbsp;: à compléter (ex. contact@forgebot.app).<br />
+    Voir aussi les <a href="/mentions-legales"><%= t('legal.mentions_nav') %></a>.
+  </p>
+
+  <nav class="legal-nav" aria-label="<%= t('legal.nav_label') %>">
+    <a href="/mentions-legales"><%= t('legal.mentions_nav') %></a>
+    <a href="/cgv"><%= t('legal.cgv_nav') %></a>
+    <a href="/retractation"><%= t('legal.retractation_nav') %></a>
+  </nav>
+</article>
+<%- include('../partials/foot') %>

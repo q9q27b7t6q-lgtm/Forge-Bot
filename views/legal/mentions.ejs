@@ -1,0 +1,87 @@
+<%- include('../partials/head') %>
+<!-- Document type — à faire valider par un professionnel du droit avant mise en production. -->
+<section class="page-hero legal-hero">
+  <div>
+    <p class="eyebrow"><%= t('legal.eyebrow') %></p>
+    <h1><%= t('legal.mentions_title') %></h1>
+    <p class="muted"><%= t('legal.updated') %></p>
+  </div>
+</section>
+
+<article class="card glass legal-doc">
+  <h2>1. Éditeur du site</h2>
+  <p>
+    Le site et le service <strong>ForgeBot</strong> sont édités par&nbsp;:
+  </p>
+  <ul>
+    <li><strong>Nom&nbsp;:</strong> Thomas Henri Treghini (Crazy)</li>
+    <li><strong>Statut&nbsp;:</strong> entrepreneur individuel</li>
+    <li><strong>Nom commercial / marque&nbsp;:</strong> ForgeBot</li>
+    <li><strong>SIRET&nbsp;:</strong> à compléter</li>
+    <li><strong>E-mail de contact&nbsp;:</strong> à compléter (ex. contact@forgebot.app)</li>
+  </ul>
+  <p>
+    Directeur de la publication&nbsp;: Thomas Henri Treghini.
+  </p>
+
+  <h2>2. Hébergeur</h2>
+  <p>
+    Le site est hébergé par&nbsp;:
+  </p>
+  <ul>
+    <li><strong>Hébergeur&nbsp;:</strong> Render Services, Inc. («&nbsp;Render&nbsp;»)</li>
+    <li><strong>Adresse&nbsp;:</strong> San Francisco, Californie, États-Unis</li>
+    <li><strong>Site&nbsp;:</strong> <a href="https://render.com" rel="noopener noreferrer" target="_blank">https://render.com</a></li>
+  </ul>
+  <p>
+    Les utilisateurs situés dans l’Union européenne peuvent être servis via l’infrastructure Render
+    (y compris des régions européennes lorsque configurées). Pour toute question technique relative
+    à l’hébergement, contactez l’éditeur via l’e-mail indiqué ci-dessus.
+  </p>
+
+  <h2>3. Objet du service</h2>
+  <p>
+    ForgeBot est une plateforme SaaS de location / configuration de bots Discord destinés aux
+    communautés de serveurs de jeux (B2C et B2B). Le service permet notamment de gérer une FAQ,
+    une boutique VIP et l’invitation d’un bot sur un ou plusieurs serveurs Discord.
+  </p>
+
+  <h2>4. Propriété intellectuelle</h2>
+  <p>
+    L’ensemble des éléments du site ForgeBot (textes, interface, logos, marques, structure,
+    code source non open source mis à disposition par l’éditeur) est protégé par le droit de la
+    propriété intellectuelle. Toute reproduction, représentation, modification ou exploitation,
+    totale ou partielle, sans autorisation écrite préalable de l’éditeur est interdite.
+  </p>
+  <p>
+    Les marques, logos et contenus tiers (notamment Discord, les jeux cités) restent la propriété
+    de leurs détenteurs respectifs. ForgeBot n’est pas affilié à Discord Inc. ni aux éditeurs de
+    jeux mentionnés à titre d’exemple.
+  </p>
+
+  <h2>5. Responsabilité</h2>
+  <p>
+    L’éditeur s’efforce d’assurer l’accessibilité et la sécurité du service. Toutefois, le service
+    est fourni «&nbsp;en l’état&nbsp;». L’éditeur ne saurait être tenu responsable des contenus publiés
+    par les clients sur Discord, ni des interruptions liées à Discord, à l’hébergeur ou à
+    l’infrastructure réseau.
+  </p>
+
+  <h2>6. Données personnelles</h2>
+  <p>
+    Le traitement des données personnelles est décrit dans la
+    <a href="/confidentialite"><%= t('legal.privacy_nav') %></a>.
+  </p>
+
+  <h2>7. Droit applicable</h2>
+  <p>
+    Les présentes mentions sont régies par le droit français.
+  </p>
+
+  <nav class="legal-nav" aria-label="<%= t('legal.nav_label') %>">
+    <a href="/cgv"><%= t('legal.cgv_nav') %></a>
+    <a href="/confidentialite"><%= t('legal.privacy_nav') %></a>
+    <a href="/retractation"><%= t('legal.retractation_nav') %></a>
+  </nav>
+</article>
+<%- include('../partials/foot') %>

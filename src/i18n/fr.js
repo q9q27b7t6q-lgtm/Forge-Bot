@@ -23,6 +23,10 @@ module.exports = {
     how: 'Mise en route',
     pricing: 'Tarifs',
     status: 'État du service',
+    legal_mentions: 'Mentions légales',
+    legal_cgv: 'CGV',
+    legal_privacy: 'Confidentialité',
+    legal_retractation: 'Rétractation',
     copy: 'ForgeBot · Fait pour les communautés FR',
   },
   landing: {
@@ -55,7 +59,7 @@ module.exports = {
     features_eyebrow: 'Puissance utile',
     features_title: 'Tout ce qu’il faut pour un serveur pro',
     features_lead:
-      'Du texte Markdown à la réponse Discord en quelques secondes — sans usine à gaz.',
+      'Tu écris ta FAQ et ta boutique. Le bot répond sur Discord. Simple.',
     f1_title: 'Base de connaissances / FAQ',
     f1_body:
       'Rédigez votre base en Markdown. Le bot trouve la bonne section par mots-clés. Mentions ou commande !faq.',
@@ -76,7 +80,7 @@ module.exports = {
       'Prêt à installer sur un petit serveur (VPS). Prochaine étape : paiement en ligne et connexion Discord.',
     how_eyebrow: 'Mise en route',
     how_title: 'En 3 étapes, c’est en ligne',
-    how_lead: 'Pas de pipeline obscur — juste le nécessaire.',
+    how_lead: 'Tu crées ton compte, tu colles ta FAQ et ta boutique, tu invites le bot. C’est tout.',
     how1_title: 'Créez votre espace',
     how1_body: 'Inscription en 2 minutes. Un compte propriétaire, vos serveurs isolés.',
     how2_title: 'Collez FAQ & boutique',
@@ -88,7 +92,7 @@ module.exports = {
     journey_eyebrow: 'Parcours client',
     journey_title: 'De l’inscription au bot en ligne',
     journey_lead:
-      'Voici le chemin type pour un propriétaire de serveur DayZ / Rust / FiveM.',
+      'Voici le chemin type pour un proprio de serveur DayZ, Rust ou GTA V (FiveM).',
     j1_title: 'Compte',
     j1_body: 'Vous créez un compte e-mail / mot de passe sur ForgeBot.',
     j2_title: 'Serveur',
@@ -234,6 +238,20 @@ module.exports = {
     invite_howto:
       '1) Allez sur le Portail Développeur Discord → Applications → votre bot.\n2) Onglet « Général » : copiez l’« Identifiant de l’application » (Client ID).\n3) Collez-le dans .env : DISCORD_CLIENT_ID=…\n4) Redémarrez ForgeBot (npm start / node src/server.js).',
     invite_template: 'Modèle d’URL d’invitation :',
+  },
+
+  legal: {
+    eyebrow: 'Informations légales',
+    nav_label: 'Autres documents légaux',
+    updated: 'Dernière mise à jour : septembre 2026',
+    mentions_title: 'Mentions légales',
+    mentions_nav: 'Mentions légales',
+    cgv_title: 'Conditions générales de vente',
+    cgv_nav: 'CGV',
+    privacy_title: 'Politique de confidentialité',
+    privacy_nav: 'Confidentialité',
+    retractation_title: 'Droit de rétractation',
+    retractation_nav: 'Rétractation',
   },
   errors: {
     csrf_title: 'Jeton de sécurité invalide',
